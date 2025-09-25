@@ -14,12 +14,33 @@
       <div class="brand">
         <a href="{{ '/' | relative_url }}">SB</a>
       </div>
-      <nav>
-        <ul>
-          {%- for item in site.data.nav -%}
-            <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
+      <nav class="site-nav">
+        {%- assign nav = site.data.nav -%}
+        {%- if nav.groups -%}
+          {%- for group in nav.groups -%}
+            <div class="nav-group">
+              {%- if group.label -%}
+                <div class="nav-heading">{{ group.label }}</div>
+              {%- endif -%}
+              <ul class="nav-list">
+                {%- for item in group.items -%}
+                  <li class="nav-item">
+                    <a class="nav-link"
+                       href="{% if item.external %}{{ item.url }}{% else %}{{ item.url | relative_url }}{% endif %}"
+                       {% if item.external %}target="_blank" rel="noopener noreferrer"{% endif %}>
+                      {%- if item.emoji -%}<span class="nav-emoji" aria-hidden="true">{{ item.emoji }}</span>{%- endif -%}
+                      <span class="nav-title">{{ item.title }}</span>
+                      <span class="spacer"></span>
+                      {%- if item.badge -%}<span class="badge">{{ item.badge }}</span>{%- endif -%}
+                      {%- if item.kbd -%}<kbd class="kbd">{{ item.kbd }}</kbd>{%- endif -%}
+                      {%- if item.external -%}<span class="ext" aria-hidden="true">↗</span>{%- endif -%}
+                    </a>
+                  </li>
+                {%- endfor -%}
+              </ul>
+            </div>
           {%- endfor -%}
-        </ul>
+        {%- endif -%}
       </nav>
     </aside>
     <main id="content" class="container">
