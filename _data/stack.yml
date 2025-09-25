@@ -1,0 +1,7 @@
+languages:
+  - name: HTML/CSS
+  - name: Markdown
+tools:
+  - name: Jekyll
+  - name: GitHub Pages
+  - name: Figma
