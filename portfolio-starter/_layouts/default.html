@@ -1,0 +1,29 @@
+---
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {%- seo -%}
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  </head>
+  <body>
+    <a class="skip-link" href="#content">Skip to content</a>
+    <aside class="sidebar" aria-label="Primary">
+      <div class="brand">
+        <a href="{{ '/' | relative_url }}">SB</a>
+      </div>
+      <nav>
+        <ul>
+          {%- for item in site.data.nav -%}
+            <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
+          {%- endfor -%}
+        </ul>
+      </nav>
+    </aside>
+    <main id="content" class="container">
+      {{ content }}
+    </main>
+  </body>
+</html>
