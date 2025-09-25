@@ -4,7 +4,7 @@ title: Home
 ---
 <section class="hero">
   <h1>Hi, I'm Santiago,<br>A Technical Writer.</h1>
-  <p class="muted">Senior Technical Writer. Knowledge Manager. AI Product Manager. I design docs, systems, and tiny tools.</p>
+  <p class="muted">Senior Technical Writer. Content Strategist. Knowledge Manager. AI Product Manager. I design knowledge resources, systems, and tools.</p>
   <p>
     <a href="mailto:santiago.bolivar7@gmail.com">Email me</a> · 
     <a href="{{ '/projects/' | relative_url }}">Explore projects</a>
