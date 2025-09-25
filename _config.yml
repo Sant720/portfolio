@@ -1,7 +1,7 @@
 title: "Santiago Bolívar — Portfolio"
 description: "Technical Writer ↗ AI Product | Portfolio & Projects"
 # If this is a project site (recommended): set your GitHub username and repo
-url: "https://<your-username>.github.io"
+url: "https://sant720.github.io"
 baseurl: "/portfolio"  # if your repo is <username>/portfolio; set to "" for user site
 
 theme: null  # we're using custom layouts/styles
