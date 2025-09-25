@@ -1,12 +1,59 @@
-- title: Explore
-  url: /
-- title: Projects
-  url: /projects/
-- title: Experience
-  url: /experience/
-- title: Services
-  url: /services/
-- title: Stack
-  url: /stack/
-- title: Contact
-  url: /contact/
+groups:
+  - items:
+      - title: Explore
+        url: /
+        emoji: "🧭"
+        badge: 1
+      - title: Experience
+        url: /experience/
+        emoji: "💼"
+        badge: 2
+      - title: Projects
+        url: /projects/
+        emoji: "✏️"
+        badge: 3
+      - title: About
+        url: /about/
+        emoji: "👤"
+        badge: 5
+
+  - label: Resources
+    items:
+      - title: Thoughts
+        url: /thoughts/
+        emoji: "🗒️"
+        badge: 7
+      - title: Stack
+        url: /stack/
+        emoji: "🧱"
+        badge: 8
+
+  - label: Extras
+    items:
+      - title: Guest Book
+        url: /guestbook/
+        emoji: "📓"
+        kbd: "G"
+      - title: Dont Click
+        url: /dont-click/
+        emoji: "⚠️"
+        kbd: "D"
+      - title: Ftp Manager
+        url: /ftp/
+        emoji: "📁"
+        kbd: "F"
+
+  - label: Connect
+    items:
+      - title: Contact
+        url: /contact/
+        emoji: "△"
+        kbd: "C"
+      - title: LinkedIn
+        url: "https://www.linkedin.com/in/your-handle"
+        emoji: "💼"
+        external: true
+      - title: Github
+        url: "https://github.com/your-handle"
+        emoji: "🐙"
+        external: true
