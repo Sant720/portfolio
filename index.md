@@ -6,7 +6,7 @@ title: Home
   <h1>Hey, I'm Santiago.</h1>
   <p class="muted">Senior Technical Writer → AI‑curious PM. I design docs, systems, and tiny tools.</p>
   <p>
-    <a href="mailto:you@example.com">Email me</a> · 
+    <a href="mailto:santiago.bolivar7@gmail.com">Email me</a> · 
     <a href="{{ '/projects/' | relative_url }}">Explore projects</a>
   </p>
 </section>
