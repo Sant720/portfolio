@@ -144,3 +144,39 @@ a:hover, a:focus { color: var(--accent-hover); text-decoration: none; }
 .sidebar::-webkit-scrollbar-thumb { background-color: transparent; }
 .sidebar:hover::-webkit-scrollbar-thumb,
 .sidebar:focus-within::-webkit-scrollbar-thumb { background-color: #3a4659; }
+
+/* Freeze the brand row at the top of the scrolling sidebar */
+.sidebar {
+  overflow: hidden auto;              /* already set; keep the sidebar scroll */
+  position: fixed;                    /* your current layout */
+}
+
+.sidebar .brand {
+  position: sticky;                   /* sticks within the sidebar scroll container */
+  top: 0;
+  z-index: 20;
+  /* expand to the sidebar edges despite its padding */
+  margin: -24px -24px 12px;           /* match your .sidebar padding (24px) */
+  padding: 16px 24px 20px;
+  background: var(--surface);         /* solid backplate for readability */
+  border-bottom: 1px solid var(--border);
+}
+
+/* Optional: subtle fade below the brand */
+.sidebar .brand::after {
+  content: "";
+  position: absolute; left: 0; right: 0; bottom: -12px; height: 12px;
+  background: linear-gradient(to bottom, rgba(0,0,0,.18), rgba(0,0,0,0));
+  pointer-events: none;
+}
+
+/* Mobile: when the sidebar stacks, don’t keep the brand sticky */
+@media (max-width: 720px) {
+  .sidebar .brand {
+    position: static;
+    margin: 0 0 12px;
+    padding: 0;
+    border-bottom: none;
+  }
+}
+
