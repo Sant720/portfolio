@@ -1,53 +1,66 @@
 ---
 ---
-/* 🎨 Color experiments (override tokens) */
+/* Load Inter first (keep this as the first statement) */
+@import "https://fonts.googleapis.com/css2?family=Inter:wght@300..900&display=swap";
+
+/* ================================
+   THEME PLAYGROUND OVERRIDES
+   Edit values in the KNOBS block.
+   Everything else derives from them.
+   ================================ */
+
+/* 0) KNOBS */
 :root {
+  /* — Colors — */
   --bg: hsl(0 0% 9%);
   --surface: hsl(0 0% 11%);
   --surface-2: hsl(0 0% 17%);
   --text: hsl(0 0% 96%);
   --text-dim: hsl(0 0% 52%);
   --border: hsl(0 0% 14%);
-
-  /* Try out a new accent */
-  --accent: #a78bfa;         /* e.g., purple */
+  --accent: #a78bfa;         /* try your favorite hue here */
   --accent-hover: #c4b5fd;
   --focus: var(--accent);
-}
 
-/* ✍️ Typography experiments */
+  /* — Typography — */
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+               Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  --lh-body: 1.6;
 
----
----
-/* 1) Load Inter from Google Fonts (variable weights + swap) */
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300..900&display=swap");
+  /* Fluid sizes (clamp parts). Use calc() to avoid Sass unit math errors. */
+  --fs-body-min: 16px;   --fs-body-vw: 0.9vw;  --fs-body-add: 12px; --fs-body-max: 18px;
+  --fs-h1-min: 34px;     --fs-h1-vw: 4.2vw;    --fs-h1-max: 46px;
+  --fs-h2-min: 26px;     --fs-h2-vw: 3.2vw;    --fs-h2-max: 34px;
+  --fs-h3-min: 20px;     --fs-h3-vw: 2.2vw;    --fs-h3-max: 24px;
 
-/* 2) Define a font token and apply it */
-:root {
-  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system,
-               Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-}
+  /* Spacing trims for headings (relies on your Stage-2 spacing tokens) */
+  --mb-h1: var(--space-5);
+  --mb-h2: var(--space-4);
+  --mb-h3: var(--space-3);
+  --mb-p:  var(--space-6);
 
-/* 3) Use it site-wide (overrides your base) */
-html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
-body { font-family: var(--font-sans); }
-
-/* Optional: polish headings/weights for Inter */
-h1, h2, h3, h4, h5, h6 { font-family: var(--font-sans); font-weight: 700; }
-h4, h5, h6 { font-weight: 600; }
-
-/* Optional: nicer numerals for tables/metrics (tabular numbers) */
-:root {
+  /* Numeral features for code/tables */
   --num-features: "tnum" 1, "lnum" 1;
 }
-.code, code, pre, table { font-feature-settings: var(--num-features); }
 
-body { line-height: 1.6; font-size: clamp(16px, calc(0.9vw + 12px), 18px); }
-h1 { font-size: clamp(34px, 4.2vw, 46px); margin-bottom: var(--space-5); }
-h2 { font-size: clamp(26px, 3.2vw, 34px); margin-bottom: var(--space-4); }
-h3 { font-size: clamp(20px, 2.2vw, 24px); margin-bottom: var(--space-3); }
-p  { margin-bottom: var(--space-6); }
+/* 1) Apply base overrides */
+html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+body {
+  font-family: var(--font-sans);
+  line-height: var(--lh-body);
+  font-size: clamp(var(--fs-body-min), calc(var(--fs-body-vw) + var(--fs-body-add)), var(--fs-body-max));
+}
+
+/* 2) Headings */
+h1, h2, h3, h4, h5, h6 { font-family: var(--font-sans); font-weight: 700; line-height: 1.15; }
+h4, h5, h6 { font-weight: 600; }
+
+h1 { font-size: clamp(var(--fs-h1-min), var(--fs-h1-vw), var(--fs-h1-max)); margin-bottom: var(--mb-h1); }
+h2 { font-size: clamp(var(--fs-h2-min), var(--fs-h2-vw), var(--fs-h2-max)); margin-bottom: var(--mb-h2); }
+h3 { font-size: clamp(var(--fs-h3-min), var(--fs-h3-vw), var(--fs-h3-max)); margin-bottom: var(--mb-h3); }
+p  { margin-bottom: var(--mb-p); }
+
+/* 3) Links & components */
 a:hover, a:focus { color: var(--accent-hover); }
-
-/* Optional: try a different surface on hero/cards */
+.code, code, pre, table { font-feature-settings: var(--num-features); }
 .hero, .card { background: var(--surface-2); }
