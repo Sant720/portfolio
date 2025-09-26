@@ -1,8 +1,14 @@
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 
-/* NEW: centralize sidebar width */
+/* Desktop-first: keep the sidebar fixed, but allow it to shrink a bit */
 :root { --sidebar-w: 260px; }
+
+@media (max-width: 1200px) { :root { --sidebar-w: 240px; } }
+@media (max-width: 1024px) { :root { --sidebar-w: 220px; } }
+
+/* Make the fixed sidebar scroll independently if it gets taller than viewport */
+.sidebar { overflow-y: auto; overscroll-behavior: contain; }
 
 body {
   background: var(--bg);
@@ -31,10 +37,10 @@ a:hover, a:focus { text-decoration: underline; }
    - #content spans viewport minus sidebar and is offset to clear it
    - .container centers the inner column and uses your design token width
 */
-#content {
-  width: calc(100vw - var(--sidebar-w));
-  margin-left: var(--sidebar-w);
-}
+
+/* Content sizing stays based on the current sidebar width var */
+#content { width: calc(100vw - var(--sidebar-w)); margin-left: var(--sidebar-w); }
+
 .container {
   max-width: var(--container);
   margin-inline: auto;              /* centers the block */
@@ -55,8 +61,8 @@ a:hover, a:focus { text-decoration: underline; }
   transform: translateY(-2px); border-color: #283241;
 }
 
-@media (max-width: 900px) {
-  .sidebar { position: static; width: auto; height: auto; }
+@media (max-width: 720px) {
+   { position: static; width: auto; height: auto; }
   #content { width: 100vw; margin-left: 0; }   /* full-width on mobile */
   .container { margin-inline: auto; }          /* stays centered */
 }
