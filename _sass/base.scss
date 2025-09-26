@@ -110,3 +110,40 @@ a:hover, a:focus { color: var(--accent-hover); text-decoration: none; }
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }
 }
+
+/* Sidebar scrollbar — scoped, subtle, accessible */
+.sidebar {
+  /* Only vertical scroll; no horizontal bar */
+  overflow: hidden auto;
+
+  /* Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+
+  /* Prevent layout nudge when scrollbars appear */
+  scrollbar-gutter: stable both-edges;
+}
+
+/* Chromium/WebKit */
+.sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+.sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: #2a3443;         /* subtle thumb on dark UI */
+  border-radius: 10px;
+  border: 2px solid transparent;     /* creates a little gap from the edge */
+}
+.sidebar:hover::-webkit-scrollbar-thumb,
+.sidebar:focus-within::-webkit-scrollbar-thumb {
+  background-color: #3a4659;         /* slightly brighter on hover/focus */
+}
+.sidebar::-webkit-scrollbar-thumb:active {
+  background-color: var(--accent);   /* clear active state */
+}
+
+.sidebar::-webkit-scrollbar-thumb { background-color: transparent; }
+.sidebar:hover::-webkit-scrollbar-thumb,
+.sidebar:focus-within::-webkit-scrollbar-thumb { background-color: #3a4659; }
