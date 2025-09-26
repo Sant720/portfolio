@@ -1,14 +1,8 @@
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 
-/* Desktop-first: keep the sidebar fixed, but allow it to shrink a bit */
+/* Sidebar width token (single source of truth) */
 :root { --sidebar-w: 260px; }
-
-@media (max-width: 1200px) { :root { --sidebar-w: 240px; } }
-@media (max-width: 1024px) { :root { --sidebar-w: 220px; } }
-
-/* Make the fixed sidebar scroll independently if it gets taller than viewport */
-.sidebar { overflow-y: auto; overscroll-behavior: contain; }
 
 body {
   background: var(--bg);
@@ -25,49 +19,42 @@ a:hover, a:focus { text-decoration: underline; }
 }
 .skip-link:focus { left: 16px; top: 16px; width: auto; height: auto; padding: 8px 10px; background: var(--surface); border-radius: 8px; outline: 2px solid var(--accent); }
 
-/* use the variable for width */
 .sidebar {
   position: fixed; left: 0; top: 0; bottom: 0; width: var(--sidebar-w);
   background: var(--surface); border-right: 1px solid var(--border); padding: 24px;
+  overflow-y: auto; overscroll-behavior: contain;
 }
 
 .brand a { display: inline-block; font-weight: 800; color: var(--text); background: #0c1116; padding: 6px 10px; border-radius: 10px; }
 
-/* CENTERED CONTENT
-   - #content spans viewport minus sidebar and is offset to clear it
-   - .container centers the inner column and uses your design token width
-*/
-
-/* Content sizing stays based on the current sidebar width var */
+/* Outer area accounts for the fixed sidebar; inner .container is centered */
 #content { width: calc(100vw - var(--sidebar-w)); margin-left: var(--sidebar-w); }
+.container { max-width: var(--container); margin-inline: auto; padding: 40px 24px; }
 
-.container {
-  max-width: var(--container);
-  margin-inline: auto;              /* centers the block */
-  padding: 40px 24px;
-}
-
-.hero { /* (empty by design; customize in theme-playground if needed) */ }
+.hero {}
 .hero h1 { margin: 0 0 10px; font-size: 60px; }
 
 .muted { color: var(--text-dim); }
-
 .grid { display: grid; gap: var(--gap); grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
 
 .card {
-  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; transition: transform .2s ease, border-color .2s ease;
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px;
+  transition: transform .2s ease, border-color .2s ease;
 }
-.card:hover, .card:focus-within {
-  transform: translateY(-2px); border-color: #283241;
-}
+.card:hover, .card:focus-within { transform: translateY(-2px); border-color: #283241; }
 
+/* --- Desktop shrink steps --- */
+@media (max-width: 1200px) { :root { --sidebar-w: 240px; } }
+@media (max-width: 1024px) { :root { --sidebar-w: 220px; } }
+
+/* --- Mobile collapse --- */
 @media (max-width: 720px) {
-   { position: static; width: auto; height: auto; }
-  #content { width: 100vw; margin-left: 0; }   /* full-width on mobile */
-  .container { margin-inline: auto; }          /* stays centered */
+  .sidebar { position: static; width: auto; height: auto; }
+  #content { width: 100vw; margin-left: 0; }
+  .container { margin-inline: auto; }
 }
 
-/* --- NAV --- */
+/* --- Nav styles --- */
 .site-nav .nav-group { margin: 24px 0; }
 .site-nav .nav-heading {
   color: var(--text-dim); font-size: 12px; letter-spacing: .06em;
@@ -96,19 +83,15 @@ a:hover, a:focus { text-decoration: underline; }
 }
 .ext { margin-left: 6px; opacity: .7; }
 
-/* --- STAGE 2 ADDITIONS --- */
+/* --- Stage 2 additions --- */
 a {
   color: var(--accent);
   transition: color var(--dur-100) var(--ease), opacity var(--dur-100) var(--ease);
 }
 a:hover, a:focus { color: var(--accent-hover); text-decoration: none; }
 
-:focus-visible {
-  outline: 2px solid var(--focus);
-  outline-offset: 2px;
-}
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
 
-/* Minimal button utility (for styleguide demos) */
 .btn {
   display: inline-flex; align-items: center; gap: 8px;
   padding: 10px 14px; border-radius: 12px;
@@ -120,7 +103,6 @@ a:hover, a:focus { color: var(--accent-hover); text-decoration: none; }
 .btn--primary { background: var(--accent); color: #0b0f14; border-color: transparent; }
 .btn--primary:hover { background: var(--accent-hover); }
 
-/* Styleguide helpers */
 .sg-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px,1fr)); gap: var(--space-6); }
 .sg-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: var(--space-6); }
 .sg-chip { display:inline-block; padding:.25rem .5rem; border:1px solid var(--border); border-radius:999px; color:var(--text-dim); }
