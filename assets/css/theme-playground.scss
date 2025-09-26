@@ -16,6 +16,32 @@
 }
 
 /* ✍️ Typography experiments */
+
+---
+---
+/* 1) Load Inter from Google Fonts (variable weights + swap) */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300..900&display=swap");
+
+/* 2) Define a font token and apply it */
+:root {
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system,
+               Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+/* 3) Use it site-wide (overrides your base) */
+html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+body { font-family: var(--font-sans); }
+
+/* Optional: polish headings/weights for Inter */
+h1, h2, h3, h4, h5, h6 { font-family: var(--font-sans); font-weight: 700; }
+h4, h5, h6 { font-weight: 600; }
+
+/* Optional: nicer numerals for tables/metrics (tabular numbers) */
+:root {
+  --num-features: "tnum" 1, "lnum" 1;
+}
+.code, code, pre, table { font-feature-settings: var(--num-features); }
+
 body { line-height: 1.6; font-size: clamp(16px, calc(0.9vw + 12px), 18px); }
 h1 { font-size: clamp(34px, 4.2vw, 46px); margin-bottom: var(--space-5); }
 h2 { font-size: clamp(26px, 3.2vw, 34px); margin-bottom: var(--space-4); }
