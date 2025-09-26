@@ -22,10 +22,9 @@ a:hover, a:focus { text-decoration: underline; }
   margin-left: 260px;
 }
 .hero {
-  padding: 32px; background: #0f141a; border: 1px solid var(--border); border-radius: var(--radius);
-  box-shadow: var(--shadow);
+  
 }
-.hero h1 { margin: 0 0 10px; font-size: 40px; }
+.hero h1 { margin: 0 0 10px; font-size: 60px; }
 .muted { color: var(--text-dim); }
 .grid { display: grid; gap: var(--gap); grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
 .card {
