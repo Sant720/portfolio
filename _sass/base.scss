@@ -6,13 +6,12 @@ html, body { margin: 0; padding: 0; }
 
 body {
   background: var(--bg);
-  color: var(--text);
+  color: var(--text--dim-high);
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
   line-height: 1.5;
 }
 
-a { color: var(--accent); text-decoration: none; }
-a:hover, a:focus { text-decoration: underline; }
+a { color: var(--text-link); text-decoration: none; }
 
 .skip-link {
   position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden;
@@ -25,7 +24,7 @@ a:hover, a:focus { text-decoration: underline; }
   overflow-y: auto; overscroll-behavior: contain;
 }
 
-.brand a { display: inline-block; font-weight: 800; color: var(--text); background: #0c1116; padding: 6px 10px; border-radius: 10px; }
+.brand a { display: inline-block; font-weight: 800; color: var(--text-bright-high); background: #0c1116; padding: 6px 10px; border-radius: 10px; }
 
 /* Outer area accounts for the fixed sidebar; inner .container is centered */
 #content { width: calc(100vw - var(--sidebar-w)); margin-left: var(--sidebar-w); }
@@ -34,7 +33,7 @@ a:hover, a:focus { text-decoration: underline; }
 .hero {}
 .hero h1 { margin: 0 0 10px; font-size: 60px; }
 
-.muted { color: var(--text-dim); }
+.muted { color: var(--text-dim-high); }
 .grid { display: grid; gap: var(--gap); grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
 
 .card {
@@ -57,7 +56,7 @@ a:hover, a:focus { text-decoration: underline; }
 /* --- Nav styles --- */
 .site-nav .nav-group { margin: 24px 0; }
 .site-nav .nav-heading {
-  color: var(--text-dim); font-size: 12px; letter-spacing: .06em;
+  color: var(--text-dim-high); font-size: 12px; letter-spacing: .06em;
   text-transform: uppercase; margin: 16px 16px 8px;
 }
 .nav-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0px; }
@@ -74,12 +73,12 @@ a:hover, a:focus { text-decoration: underline; }
   display: inline-flex; min-width: 20px; height: 20px; padding: 0 6px;
   align-items: center; justify-content: center; font-size: 12px;
   border-radius: 999px; background: #0f141a; border: 1px solid var(--border);
-  color: var(--text-dim);
+  color: var(--text-dim-low);
 }
 .kbd {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
   font-size: 12px; padding: 2px 6px; border: 1px solid var(--border);
-  border-bottom-width: 2px; border-radius: 6px; background: #0c1116; color: var(--text-dim);
+  border-bottom-width: 2px; border-radius: 6px; background: #0c1116; color: var(--text-dim-high);
 }
 .ext { margin-left: 6px; opacity: .7; }
 
@@ -88,7 +87,7 @@ a {
   color: var(--accent);
   transition: color var(--dur-100) var(--ease), opacity var(--dur-100) var(--ease);
 }
-a:hover, a:focus { color: var(--accent-hover); text-decoration: none; }
+a:hover, a:focus { text-decoration: none; }
 
 :focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
 
@@ -96,16 +95,16 @@ a:hover, a:focus { color: var(--accent-hover); text-decoration: none; }
   display: inline-flex; align-items: center; gap: 8px;
   padding: 10px 14px; border-radius: 12px;
   border: 1px solid var(--border); background: var(--surface);
-  color: var(--text); text-decoration: none;
+  color: var(--text-bright-low); text-decoration: none;
   transition: transform var(--dur-100) var(--ease), border-color var(--dur-100) var(--ease);
 }
 .btn:hover { }
-.btn--primary { background: var(--accent); color: hsl(0, 0%, 96%); border-color: hsl(0, 0%, 22%); }
+.btn--primary { background: var(--accent); color: var(--text-bright-high); border-color: hsl(0, 0%, 22%); }
 .btn--primary:hover { background: var(--accent-hover); }
 
 .sg-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px,1fr)); gap: var(--space-6); }
 .sg-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: var(--space-6); }
-.sg-chip { display:inline-block; padding:.25rem .5rem; border:1px solid var(--border); border-radius:999px; color:var(--text-dim); }
+.sg-chip { display:inline-block; padding:.25rem .5rem; border:1px solid var(--border); border-radius:999px; color:var(--text-dim-high); }
 
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }
