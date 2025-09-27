@@ -17,10 +17,10 @@
   --accent-hover: hsl(0, 0%, 19%);
   --surface: hsl(0, 0%, 11%);
   --surface-2: var(--accent);
-  --text-1: hsl(0, 0%, 96%);
-  --text-2: hsl(0, 0%, 80%);
-  --text-3: hsl(0, 0%, 65%);
-  --text-4: hsl(0, 0%, 52%);
+  --text-bright-high: hsl(0, 0%, 96%);
+  --text-bright-low: hsl(0, 0%, 80%);
+  --text-dim-high: hsl(0, 0%, 60%);
+  --text-dim-low: hsl(0, 0%, 52%);
   --border: hsl(0, 0%, 14%);
   --focus: var(--accent);
 
@@ -54,20 +54,17 @@ body {
 }
 
 /* 2) Headings */
-h1, h2, h3, h4, h5, h6 { font-family: var(--font-sans); font-weight: 700; line-height: 1.15; color: var(--text-1); }
+h1, h2, h3, h4, h5, h6 { font-family: var(--font-sans); font-weight: 700; line-height: 1.15; color: var(--text-bright-high); }
 h4, h5, h6 { font-weight: 600; }
 
 h1 { font-size: clamp(var(--fs-h1-min), var(--fs-h1-vw), var(--fs-h1-max)); margin-bottom: var(--mb-h1); }
 h2 { font-size: clamp(var(--fs-h2-min), var(--fs-h2-vw), var(--fs-h2-max)); margin-bottom: var(--mb-h2); }
 h3 { font-size: clamp(var(--fs-h3-min), var(--fs-h3-vw), var(--fs-h3-max)); margin-bottom: var(--mb-h3); }
-p  { margin-bottom: var(--mb-p); color: var(--text-3); }
+p  { margin-bottom: var(--mb-p); color: var(--text-dim-high); }
 
 /* 3) Links & components */
-a { color: var(--text-2); }
-a:hover, a:focus { color: var(--text-1); }
+a { color: var(--text-bright-low); }
+a:hover, a:focus { color: var(--text-bright-high); }
 .code, code, pre, table { font-feature-settings: var(--num-features); }
-.code, code, pre { background: var(--surface-2); color: var(--text-2); }
+.code, code, pre { background: var(--surface-2); color: var(--text-bright-low); }
 .card { background: var(--surface-2); }
-
-.sidebar {padding-left: 4px; }
-.sidebar .brand { margin: 24px -24px 40px; padding: 16px 32px 20px; }
