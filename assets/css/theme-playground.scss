@@ -13,13 +13,13 @@
 :root {
   /* — Colors — */
   --bg: hsl(0, 0%, 9%);
+  --accent: hsl(0, 0%, 17%);         /* try your favorite hue here */
+  --accent-hover: hsl(0, 0%, 19%);
   --surface: hsl(0, 0%, 11%);
-  --surface-2: hsl(0, 0%, 17%);
+  --surface-2: var(--accent);
   --text: hsl(0, 0%, 96%);
   --text-dim: hsl(0, 0%, 52%);
   --border: hsl(0, 0%, 14%);
-  --accent: hsl(0, 0, 17%);         /* try your favorite hue here */
-  --accent-hover: hsl(0, 0, 19%);
   --focus: var(--accent);
 
   /* — Typography — */
