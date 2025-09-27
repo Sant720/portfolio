@@ -1,22 +1,49 @@
 :root {
-  /* Spacing (4px baseline) */
-  --space-1: 4px;  --space-2: 8px;  --space-3: 12px;
-  --space-4: 16px; --space-5: 20px; --space-6: 24px;
-  --space-7: 32px; --space-8: 40px; --space-9: 48px;
+  /* Palette (dark-only) */
+  --bg: #0b0f14;
+  --surface: #12171e;
+  --surface-2: #0f141a;
+  --text: #e6e9ef;
+  --text-dim: #b0b8c3;
+  --border: #1e2630;
+  --accent: #7dd3fc;
+  --accent-hover: #a5e3ff;
+  --focus: var(--accent);
 
-  /* Grid gaps */
-  --gap: 16px;
+  /* Feedback */
+  --success: #34d399;
+  --warning: #fbbf24;
+  --danger:  #f87171;
+
+  /* Spacing scale (4px baseline) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 32px;
+  --space-8: 40px;
+  --space-9: 48px;
+
+  --gap: 16px; 
   --gap-lg: 24px;
 
   /* Radii & shadows */
-  --radius-sm: 8px; --radius: 14px; --radius-lg: 20px; --radius-2xl: 28px;
+  --radius-sm: 8px;
+  --radius:    14px;
+  --radius-lg: 20px;
+  --radius-2xl: 28px;
   --shadow-sm: 0 2px 8px rgba(0,0,0,.25);
   --shadow-md: 0 8px 24px rgba(0,0,0,.35);
   --shadow-lg: 0 16px 44px rgba(0,0,0,.45);
 
   /* Layout & motion */
   --container: 960px;
-  --bp-md: 900px; --bp-lg: 1200px;
-  --dur-100: 120ms; --dur-200: 200ms; --dur-300: 320ms;
+  --bp-md: 900px;
+  --bp-lg: 1200px;
+  --dur-100: 120ms;
+  --dur-200: 200ms;
+  --dur-300: 320ms;
   --ease: cubic-bezier(.2,.7,.2,1);
 }
