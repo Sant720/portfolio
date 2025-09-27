@@ -1,156 +1,71 @@
-/* ============================================================
-   Base styles
-   - Theme tokens & typography (overrides)
-   - Document/base resets & a11y
-   - Layout (sidebar, content, container)
-   - Typography elements
-   - Navigation & components
-   - Scrollbar & sticky brand
-   - Responsive breakpoints
-   ============================================================ */
-
-/* ========== 1) Theme tokens & typography (overrides) ========== */
-:root {
-  /* Colors (dark) */
-  --bg: hsl(0, 0%, 9%);
-  --surface: hsl(0, 0%, 11%);
-  --surface-2: hsl(0, 0%, 17%);
-  --text: hsl(0, 0%, 96%);
-  --text-dim: hsl(0, 0%, 52%);
-  --border: hsl(0, 0%, 14%);
-  --accent: #a78bfa;
-  --accent-hover: #c4b5fd;
-  --focus: var(--accent);
-
-  /* Typography */
-  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
-               Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-  --lh-body: 1.6;
-  /* Fluid sizes (use calc() so Sass won't pre-compute) */
-  --fs-body-min: 16px;  --fs-body-vw: 0.9vw;  --fs-body-add: 12px;  --fs-body-max: 18px;
-  --fs-h1-min: 34px;    --fs-h1-vw: 4.2vw;    --fs-h1-max: 46px;
-  --fs-h2-min: 26px;    --fs-h2-vw: 3.2vw;    --fs-h2-max: 34px;
-  --fs-h3-min: 20px;    --fs-h3-vw: 2.2vw;    --fs-h3-max: 24px;
-
-  /* Spacing for headings (uses Stage‑2 spacing tokens) */
-  --mb-h1: var(--space-5);
-  --mb-h2: var(--space-4);
-  --mb-h3: var(--space-3);
-  --mb-p:  var(--space-6);
-
-  /* Numerals for code/tables */
-  --num-features: "tnum" 1, "lnum" 1;
-
-  /* Layout */
-  --sidebar-w: 260px; /* desktop width for fixed sidebar */
-}
-
-/* ========== 2) Document/base resets & a11y ========== */
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
-html { -webkit-text-size-adjust: 100%; }
+
+/* Sidebar width token (single source of truth) */
+:root { --sidebar-w: 280px; }
 
 body {
   background: var(--bg);
-  color: var(--text);
-  font-family: var(--font-sans);
-  line-height: var(--lh-body);
-  font-size: clamp(var(--fs-body-min), calc(var(--fs-body-vw) + var(--fs-body-add)), var(--fs-body-max));
+  color: var(--text--dim-high);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  line-height: 1.5;
 }
 
-a {
-  color: var(--accent);
-  text-decoration: none;
-  transition: color var(--dur-100) var(--ease), opacity var(--dur-100) var(--ease);
-}
-a:hover, a:focus { color: var(--accent-hover); text-decoration: none; }
-
-:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+a { color: var(--text-link); text-decoration: none; }
 
 .skip-link {
   position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden;
 }
-.skip-link:focus {
-  left: 16px; top: 16px; width: auto; height: auto; padding: 8px 10px;
-  background: var(--surface); border-radius: 8px; outline: 2px solid var(--accent);
-}
+.skip-link:focus { left: 16px; top: 16px; width: auto; height: auto; padding: 8px 10px; background: var(--surface); border-radius: 8px; outline: 2px solid var(--accent); }
 
-/* ========== 3) Layout (sidebar, content, container) ========== */
 .sidebar {
-  position: fixed;
-  left: 0; top: 0; bottom: 0;
-  width: var(--sidebar-w);
-  background: var(--surface);
-  border-right: 1px solid var(--border);
-  padding: 24px;
-
-  /* own scroll without affecting page */
-  overflow: hidden auto;
-  overscroll-behavior: contain;
+  position: fixed; left: 0; top: 0; bottom: 0; width: var(--sidebar-w);
+  background: var(--surface); border-right: 1px solid var(--border); padding: 30px 10px;
+  overflow-y: auto; overscroll-behavior: contain;
 }
 
-.brand a {
-  display: inline-block;
-  font-weight: 800;
-  color: var(--text);
-  background: #0c1116;
-  padding: 6px 10px;
-  border-radius: 10px;
-}
+.brand a { display: inline-block; font-weight: 800; color: var(--text-bright-high); background: #0c1116; padding: 6px 10px; border-radius: 10px; }
 
-/* Sticky brand header within the scrolling sidebar */
-.sidebar .brand {
-  position: sticky;
-  top: 0;
-  z-index: 20;
-  margin: -24px -24px 12px;
-  padding: 16px 24px 20px;
-  background: var(--surface);
-  border-bottom: 1px solid var(--border);
-}
-.sidebar .brand::after {
-  content: ""; position: absolute; left: 0; right: 0; bottom: -12px; height: 12px;
-  background: linear-gradient(to bottom, rgba(0,0,0,.18), rgba(0,0,0,0));
-  pointer-events: none;
-}
-
-/* Content area accounts for the fixed sidebar */
+/* Outer area accounts for the fixed sidebar; inner .container is centered */
 #content { width: calc(100vw - var(--sidebar-w)); margin-left: var(--sidebar-w); }
-.container { max-width: var(--container); margin-inline: auto; padding: 40px 24px; }
+.container { max-width: var(--container); margin-inline: auto; padding: 96px 32px; }
 
-/* ========== 4) Typography elements ========== */
-h1, h2, h3, h4, h5, h6 { font-family: var(--font-sans); line-height: 1.15; margin: 0 0 var(--space-4); }
-h1, h2, h3 { font-weight: 700; }
-h4, h5, h6 { font-weight: 600; }
+.hero {}
+.hero h1 { margin: 0 0 10px; font-size: 60px; }
 
-h1 { font-size: clamp(var(--fs-h1-min), var(--fs-h1-vw), var(--fs-h1-max)); margin-bottom: var(--mb-h1); }
-h2 { font-size: clamp(var(--fs-h2-min), var(--fs-h2-vw), var(--fs-h2-max)); margin-bottom: var(--mb-h2); }
-h3 { font-size: clamp(var(--fs-h3-min), var(--fs-h3-vw), var(--fs-h3-max)); margin-bottom: var(--mb-h3); }
-p  { margin: 0 0 var(--mb-p); }
+.muted { color: var(--text-dim-high); }
+.grid { display: grid; gap: var(--gap); grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
 
-.lead   { font-size: clamp(18px, calc(1.2vw + 14px), 22px); }
-.muted  { color: var(--text-dim); }
-.eyebrow{ text-transform: uppercase; letter-spacing: .08em; font-size: 12px; color: var(--text-dim); }
+.card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px;
+  transition: transform .2s ease, border-color .2s ease;
+}
+.card:hover, .card:focus-within { transform: translateY(-2px); border-color: #283241; }
 
-code, kbd, pre { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; }
-code { background: #0c1116; border: 1px solid var(--border); border-radius: 8px; padding: 0 .35em; }
-pre  { background: #0c1116; border: 1px solid var(--border); border-radius: var(--radius); padding: var(--space-6); overflow: auto; }
-pre code { background: transparent; border: 0; padding: 0; }
-.code, table { font-feature-settings: var(--num-features); }
+/* --- Desktop shrink steps --- */
+@media (max-width: 1200px) { :root { --sidebar-w: 250px; } }
+@media (max-width: 1024px) { :root { --sidebar-w: 220px; } }
 
-/* ========== 5) Navigation & components ========== */
+/* --- Mobile collapse --- */
+@media (max-width: 720px) {
+  .sidebar { position: static; width: auto; height: auto; }
+  #content { width: 100vw; margin-left: 0; }
+  .container { margin-inline: auto; }
+}
+
+/* --- Nav styles --- */
 .site-nav .nav-group { margin: 24px 0; }
 .site-nav .nav-heading {
-  color: var(--text-dim); font-size: 12px; letter-spacing: .06em;
-  text-transform: uppercase; margin: 16px 0 8px;
+  color: var(--text-dim-high); font-size: 12px; letter-spacing: .06em;
+  text-transform: uppercase; margin: 16px 16px 8px;
 }
-.nav-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.nav-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0px; }
 .nav-link {
   display: flex; align-items: center; gap: 10px;
-  padding: 10px 12px; border-radius: 12px; color: var(--text);
+  padding: 10px 12px; border-radius: 12px; color: var(--text-dim-high);
   border: 1px solid transparent;
 }
-.nav-link:hover, .nav-link:focus { background: #0f141a; border-color: var(--border); text-decoration: none; }
+.nav-link:hover, .nav-link:focus { color: var(--text-bright-high); background: #0f141a; border-color: var(--border); text-decoration: none; }
 .nav-emoji { width: 20px; display: inline-flex; justify-content: center; }
 .nav-title { font-weight: 500; }
 .spacer { flex: 1; }
@@ -158,63 +73,109 @@ pre code { background: transparent; border: 0; padding: 0; }
   display: inline-flex; min-width: 20px; height: 20px; padding: 0 6px;
   align-items: center; justify-content: center; font-size: 12px;
   border-radius: 999px; background: #0f141a; border: 1px solid var(--border);
-  color: var(--text-dim);
+  color: var(--text-dim-low);
 }
 .kbd {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
   font-size: 12px; padding: 2px 6px; border: 1px solid var(--border);
-  border-bottom-width: 2px; border-radius: 6px; background: #0c1116; color: var(--text-dim);
+  border-bottom-width: 2px; border-radius: 6px; background: #0c1116; color: var(--text-dim-high);
 }
 .ext { margin-left: 6px; opacity: .7; }
 
-.grid { display: grid; gap: var(--gap); grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
-
-.card {
-  background: var(--surface-2);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 16px;
-  transition: transform .2s ease, border-color .2s ease;
+/* --- Stage 2 additions --- */
+a {
+  color: var(--accent);
+  transition: color var(--dur-100) var(--ease), opacity var(--dur-100) var(--ease);
 }
-.card:hover, .card:focus-within { transform: translateY(-2px); border-color: #283241; }
+a:hover, a:focus { text-decoration: none; }
+
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
 
 .btn {
   display: inline-flex; align-items: center; gap: 8px;
   padding: 10px 14px; border-radius: 12px;
-  border: 1px solid var(--border); background: var(--surface-2);
-  color: var(--text); text-decoration: none;
+  border: 1px solid var(--border); background: var(--surface);
+  color: var(--text-bright-low); text-decoration: none;
   transition: transform var(--dur-100) var(--ease), border-color var(--dur-100) var(--ease);
 }
-.btn:hover { transform: translateY(-1px); border-color: #283241; }
-.btn--primary { background: var(--accent); color: #0b0f14; border-color: transparent; }
+.btn:hover { }
+.btn--primary { background: var(--accent); color: var(--text-bright-high); border-color: hsl(0, 0%, 22%); }
 .btn--primary:hover { background: var(--accent-hover); }
 
-/* Styleguide helpers */
 .sg-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px,1fr)); gap: var(--space-6); }
 .sg-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: var(--space-6); }
-.sg-chip { display:inline-block; padding:.25rem .5rem; border:1px solid var(--border); border-radius:999px; color:var(--text-dim); }
-
-/* ========== 6) Sidebar scrollbar ========== */
-.sidebar { scrollbar-width: thin; scrollbar-color: var(--border) transparent; scrollbar-gutter: stable both-edges; }
-.sidebar::-webkit-scrollbar { width: 8px; }
-.sidebar::-webkit-scrollbar-track { background: transparent; }
-.sidebar::-webkit-scrollbar-thumb { background-color: #2a3443; border-radius: 10px; border: 2px solid transparent; }
-.sidebar:hover::-webkit-scrollbar-thumb,
-.sidebar:focus-within::-webkit-scrollbar-thumb { background-color: #3a4659; }
-.sidebar::-webkit-scrollbar-thumb:active { background-color: var(--accent); }
-
-/* ========== 7) Responsive breakpoints ========== */
-/* Shrink the fixed sidebar a bit on smaller desktops */
-@media (max-width: 1200px) { :root { --sidebar-w: 240px; } }
-@media (max-width: 1024px) { :root { --sidebar-w: 220px; } }
-
-/* Collapse the sidebar on mobile */
-@media (max-width: 720px) {
-  .sidebar { position: static; width: auto; height: auto; }
-  #content { width: 100vw; margin-left: 0; }
-  .sidebar .brand { position: static; margin: 0 0 12px; padding: 0; border-bottom: none; }
-}
+.sg-chip { display:inline-block; padding:.25rem .5rem; border:1px solid var(--border); border-radius:999px; color:var(--text-dim-high); }
 
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }
 }
+
+/*  scrollbar — scoped, subtle, accessible */
+.sidebar {
+  /* Only vertical scroll; no horizontal bar */
+  overflow: hidden auto;
+
+  /* Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+
+  /* Prevent layout nudge when scrollbars appear */
+  scrollbar-gutter: stable both-edges;
+}
+
+/* Chromium/WebKit */
+.sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+.sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: #2a3443;         /* subtle thumb on dark UI */
+  border-radius: 10px;
+  border: 2px solid transparent;     /* creates a little gap from the edge */
+}
+.sidebar:hover::-webkit-scrollbar-thumb,
+.sidebar:focus-within::-webkit-scrollbar-thumb {
+  background-color: var(--surface-2);         /* slightly brighter on hover/focus */
+}
+
+.sidebar::-webkit-scrollbar-thumb { background-color: transparent; }
+.sidebar:hover::-webkit-scrollbar-thumb,
+.sidebar:focus-within::-webkit-scrollbar-thumb { background-color: #3a4659; }
+
+/* Freeze the brand row at the top of the scrolling sidebar */
+.sidebar {
+  overflow: hidden auto;              /* already set; keep the sidebar scroll */
+  position: fixed;                    /* your current layout */
+}
+
+.sidebar .brand {
+  position: sticky;                   /* sticks within the sidebar scroll container */
+  top: 0;
+  z-index: 20;
+  /* expand to the sidebar edges despite its padding */
+  margin: -24px -24px 12px;           /* match your .sidebar padding (24px) */
+  padding: 16px 24px 20px;
+  background: var(--surface);         /* solid backplate for readability */
+  border-bottom: 1px solid var(--border);
+}
+
+/* Optional: subtle fade below the brand */
+.sidebar .brand::after {
+  content: "";
+  position: absolute; left: 0; right: 0; bottom: -12px; height: 12px;
+  background: linear-gradient(to bottom, rgba(0,0,0,.18), rgba(0,0,0,0));
+  pointer-events: none;
+}
+
+/* Mobile: when the sidebar stacks, don’t keep the brand sticky */
+@media (max-width: 720px) {
+  .sidebar .brand {
+    position: static;
+    margin: 0 0 12px;
+    padding: 0;
+    border-bottom: none;
+  }
+}
+
