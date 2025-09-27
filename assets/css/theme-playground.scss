@@ -17,7 +17,9 @@
   --accent-hover: hsl(0, 0%, 19%);
   --surface: hsl(0, 0%, 11%);
   --surface-2: var(--accent);
-  --text: hsl(0, 0%, 96%);
+  --text-highlight: hsl(0, 0%, 96%);
+  --text-link: hsl (0, 0%, 75%;)
+  --text-normal: hsl(0, 0%, 65%);
   --text-dim: hsl(0, 0%, 52%);
   --border: hsl(0, 0%, 14%);
   --focus: var(--accent);
@@ -61,6 +63,7 @@ h3 { font-size: clamp(var(--fs-h3-min), var(--fs-h3-vw), var(--fs-h3-max)); marg
 p  { margin-bottom: var(--mb-p); }
 
 /* 3) Links & components */
-a:hover, a:focus { color: hsl(0, 0, 96%); }
+a { color: var(--text-link); text-decoration: underline; }
+a:hover, a:focus { color: var(--text-highlight); text-decoration: underline; }
 .code, code, pre, table { font-feature-settings: var(--num-features); }
 .card { background: var(--surface-2); }
