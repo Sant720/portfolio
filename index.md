@@ -4,10 +4,10 @@ title: Home
 ---
 <section class="hero">
   <h1>Hi, I'm Santiago,<br>A Technical Writer.</h1>
-  <p class="muted">Senior Technical Writer. Content Strategist. Knowledge Manager. AI Product Manager. I design knowledge resources, systems, and tools.</p>
+  <p class="lead muted">Senior Technical Writer. Content Strategist. Knowledge Manager. AI Product Manager. I design knowledge resources, systems, and tools.</p>
   <p>
-    <a href="mailto:santiago.bolivar7@gmail.com">Email me</a> · 
-    <a href="{{ '/projects/' | relative_url }}">Explore projects</a>
+    <a class="btn btn--primary" href="mailto:santiago.bolivar7@gmail.com">Email me</a>
+    <a class="btn" href="{{ '/projects/' | relative_url }}">Explore projects</a>
   </p>
 </section>
 
