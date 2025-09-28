@@ -7,8 +7,10 @@ robots: "noindex, nofollow"
 <div class="hero">
   <div class="eyebrow">System</div>
   <h1>Design Tokens & Type</h1>
-  <p class="lead muted">Quick visual check to keep styles consistent as the site grows.</p>
+  <p class="lead">Quick visual check to keep styles consistent as the site grows.</p>
 </div>
+
+---
 
 ## Colors
 <div class="sg-grid">
@@ -21,15 +23,28 @@ robots: "noindex, nofollow"
   <div class="sg-card"><div style="height:48px;border-radius:12px;background:var(--danger)"></div><p><code>--danger</code></p></div>
 </div>
 
+---
+
 ## Typography
 <div class="sg-card">
   <div class="eyebrow">Eyebrow</div>
   <h1>Heading 1</h1>
+  <p class="lead">Lead paragraph — great for introductions. Normally below h1 headings</p>
   <h2>Heading 2</h2>
+  <p>Body paragraph with <code>inline code</code> and a <a href="#">link</a>.</p>
   <h3>Heading 3</h3>
-  <p class="lead">Lead paragraph — great for introductions.</p>
+  <p>Body paragraph with <code>inline code</code> and a <a href="#">link</a>.</p>
+  <h4>Heading 4</h4>
+  <p>Body paragraph with <code>inline code</code> and a <a href="#">link</a>.</p>
+  <h5>Heading 5</h5>
+  <p>Body paragraph with <code>inline code</code> and a <a href="#">link</a>.</p>
+  <h6>Heading 6</h6>
+  <p>Body paragraph with <code>inline code</code> and a <a href="#">link</a>.</p>
+
   <p>Body paragraph with <code>inline code</code> and a <a href="#">link</a>.</p>
 </div>
+
+---
 
 ## Spacing tokens
 <div class="sg-grid">
@@ -41,6 +56,8 @@ robots: "noindex, nofollow"
   </div>
   {% endfor %}
 </div>
+
+---
 
 ## Buttons (demo)
 <p>

@@ -6,9 +6,6 @@ html, body { margin: 0; padding: 0; }
 
 body {
   background: var(--bg);
-  color: var(--text--dim-high);
-  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-  line-height: 1.5;
 }
 
 a { color: var(--text-link); text-decoration: none; }
@@ -33,14 +30,16 @@ a { color: var(--text-link); text-decoration: none; }
 .hero {}
 .hero h1 { margin: 0 0 10px; font-size: 60px; }
 
-.muted { color: var(--text-dim-high); }
 .grid { display: grid; gap: var(--gap); grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
 
 .card {
   background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px;
   transition: transform .2s ease, border-color .2s ease;
 }
-.card:hover, .card:focus-within { transform: translateY(-2px); border-color: #283241; }
+// a.card { color: var(--text-bright-low); }
+.card:hover, .card:focus-within { border-color: var(--accent); }
+.card__title { color: var(--text-bright-high); }
+.card__desc { color: var(--text-dim-low);} 
 
 /* --- Desktop shrink steps --- */
 @media (max-width: 1200px) { :root { --sidebar-w: 250px; } }
@@ -98,8 +97,8 @@ a:hover, a:focus { text-decoration: none; }
   color: var(--text-bright-low); text-decoration: none;
   transition: transform var(--dur-100) var(--ease), border-color var(--dur-100) var(--ease);
 }
-.btn:hover { }
-.btn--primary { background: var(--accent); color: var(--text-bright-high); border-color: hsl(0, 0%, 22%); }
+.btn:hover { color: var(--text-bright-high)}
+.btn--primary { background: var(--accent); color: var(--text-bright-low); border-color: hsl(0, 0%, 22%); }
 .btn--primary:hover { background: var(--accent-hover); }
 
 .sg-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px,1fr)); gap: var(--space-6); }

@@ -1,70 +1,69 @@
----
----
-/* Load Inter first (keep this as the first statement) */
-@import "https://fonts.googleapis.com/css2?family=Inter:wght@300..900&display=swap";
+// ---
+// ---
+// /* Load Inter first (keep this as the first statement) */
+// // @import "https://fonts.googleapis.com/css2?family=Inter:wght@300..900&display=swap";
 
-/* ================================
-   THEME PLAYGROUND OVERRIDES
-   Edit values in the KNOBS block.
-   Everything else derives from them.
-   ================================ */
+// /* ================================
+//    THEME PLAYGROUND OVERRIDES
+//    Edit values in the KNOBS block.
+//    Everything else derives from them.
+//    ================================ */
 
-/* 0) KNOBS */
-:root {
-  /* — Colors — */
-  --bg: hsl(0, 0%, 9%);
-  --accent: hsl(0, 0%, 17%);         /* try your favorite hue here */
-  --accent-hover: hsl(0, 0%, 19%);
-  --surface: hsl(0, 0%, 11%);
-  --surface-2: var(--accent);
-  --text-bright-high: hsl(0, 0%, 96%);
-  --text-bright-low: hsl(0, 0%, 80%);
-  --text-dim-high: hsl(0, 0%, 60%);
-  --text-dim-low: hsl(0, 0%, 52%);
-  --text-link: #4493f8;
-  --border: hsl(0, 0%, 14%);
-  --focus: var(--accent);
+// /* 0) KNOBS */
+// // :root {
+// //   /* — Colors — */
+// //   // --bg: hsl(0, 0%, 9%);
+// //   // --accent: hsl(0, 0%, 17%);         /* try your favorite hue here */
+// //   // --accent-hover: hsl(0, 0%, 19%);
+// //   // --surface: hsl(0, 0%, 11%);
+// //   // --surface-2: var(--accent);
+// //   // --text-bright-high: hsl(0, 0%, 96%);
+// //   // --text-bright-low: hsl(0, 0%, 80%);
+// //   // --text-dim-high: hsl(0, 0%, 60%);
+// //   // --text-dim-low: hsl(0, 0%, 52%);
+// //   // --text-link: #4493f8;
+// //   // --border: hsl(0, 0%, 14%);
+// //   // --focus: var(--accent);
 
-  /* — Typography — */
-  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
-               Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-  --lh-body: 1.6;
+// //   // /* — Typography — */
+// //   // --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+// //   //              Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+// //   // --lh-body: 1.6;
 
-  /* Fluid sizes (clamp parts). Use calc() to avoid Sass unit math errors. */
-  --fs-body-min: 16px;   --fs-body-vw: 0.9vw;  --fs-body-add: 12px; --fs-body-max: 18px;
-  --fs-h1-min: 34px;     --fs-h1-vw: 4.2vw;    --fs-h1-max: 46px;
-  --fs-h2-min: 26px;     --fs-h2-vw: 3.2vw;    --fs-h2-max: 34px;
-  --fs-h3-min: 20px;     --fs-h3-vw: 2.2vw;    --fs-h3-max: 24px;
+// //   /* Fluid sizes (clamp parts). Use calc() to avoid Sass unit math errors. */
+// // //   --fs-body-min: 16px;   --fs-body-vw: 0.9vw;  --fs-body-add: 12px; --fs-body-max: 18px;
+// // //   --fs-h1-min: 34px;     --fs-h1-vw: 4.2vw;    --fs-h1-max: 46px;
+// // //   --fs-h2-min: 26px;     --fs-h2-vw: 3.2vw;    --fs-h2-max: 34px;
+// // //   --fs-h3-min: 20px;     --fs-h3-vw: 2.2vw;    --fs-h3-max: 24px;
 
-  /* Spacing trims for headings (relies on your Stage-2 spacing tokens) */
-  --mb-h1: var(--space-5);
-  --mb-h2: var(--space-4);
-  --mb-h3: var(--space-3);
-  --mb-p:  var(--space-6);
+// // //   // /* Spacing trims for headings */
+// // //   --mb-h1: var(--space-5);
+// // //   --mb-h2: var(--space-4);
+// // //   --mb-h3: var(--space-3);
+// // //   --mb-p:  var(--space-6);
 
-  /* Numeral features for code/tables */
-  --num-features: "tnum" 1, "lnum" 1;
-}
+// // //   // /* Numeral features for code/tables */
+// // //   --num-features: "tnum" 1, "lnum" 1;
+// // }
 
-/* 1) Apply base overrides */
-html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
-body {
-  font-family: var(--font-sans);
-  line-height: var(--lh-body);
-  font-size: clamp(var(--fs-body-min), calc(var(--fs-body-vw) + var(--fs-body-add)), var(--fs-body-max));
-}
+// /* 1) Apply base overrides */
+// // html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+// // body {
+// //   font-family: var(--font-sans);
+// //   line-height: var(--lh-body);
+// //   font-size: clamp(var(--fs-body-min), calc(var(--fs-body-vw) + var(--fs-body-add)), var(--fs-body-max));
+// // }
 
-/* 2) Headings */
-h1, h2, h3, h4, h5, h6 { font-family: var(--font-sans); font-weight: 700; line-height: 1.15; color: var(--text-bright-high); }
-h4, h5, h6 { font-weight: 600; }
+// /* 2) Headings */
+// // h1, h2, h3, h4, h5, h6 { font-family: var(--font-sans); font-weight: 700; line-height: 1.15; color: var(--text-bright-high); }
+// // h4, h5, h6 { font-weight: 600; }
 
-h1 { font-size: clamp(var(--fs-h1-min), var(--fs-h1-vw), var(--fs-h1-max)); margin-bottom: var(--mb-h1); }
-h2 { font-size: clamp(var(--fs-h2-min), var(--fs-h2-vw), var(--fs-h2-max)); margin-bottom: var(--mb-h2); }
-h3 { font-size: clamp(var(--fs-h3-min), var(--fs-h3-vw), var(--fs-h3-max)); margin-bottom: var(--mb-h3); }
-p  { margin-bottom: var(--mb-p); color: var(--text-dim-high); }
+// // h1 { font-size: clamp(var(--fs-h1-min), var(--fs-h1-vw), var(--fs-h1-max)); margin-bottom: var(--mb-h1); }
+// // h2 { font-size: clamp(var(--fs-h2-min), var(--fs-h2-vw), var(--fs-h2-max)); margin-bottom: var(--mb-h2); }
+// // h3 { font-size: clamp(var(--fs-h3-min), var(--fs-h3-vw), var(--fs-h3-max)); margin-bottom: var(--mb-h3); }
+// // p  { margin-bottom: var(--mb-p); color: var(--text-dim-high); }
 
-/* 3) Links & components */
-a { color: var(--text-link); }
-.code, code, pre, table { font-feature-settings: var(--num-features); }
-.code, code, pre { background: var(--surface-2); color: var(--text-bright-low); }
-.card { background: var(--surface-2); }
+// /* 3) Links & components */
+// // a { color: var(--text-link); }
+// // .code, code, pre, table { font-feature-settings: var(--num-features); }
+// // .code, code, pre { background: var(--surface-2); color: var(--text-bright-low); }

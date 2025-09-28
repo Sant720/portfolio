@@ -1,21 +1,54 @@
-/* Base font sizing with a mild fluid scale */
-html { -webkit-text-size-adjust: 100%; }
-body { font-size: clamp(16px, calc(0.9vw + 12px), 18px); }
+/* Load font */
+@import "https://fonts.googleapis.com/css2?family=Inter:wght@300..900&display=swap";
 
-h1, h2, h3, h4, h5, h6 { line-height: 1.15; margin: 0 0 var(--space-4); }
-h1 { font-size: clamp(32px, 4vw, 44px); }
-h2 { font-size: clamp(24px, 3vw, 32px); }
-h3 { font-size: clamp(20px, 2.2vw, 24px); }
+/* Base font sizing with a mild fluid scale */
+html { -webkit-text-size-adjust: 100%; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+body {
+  font-family: var(--font-sans);
+  color: var(--text-dim-high);
+  font-size: clamp(16px, calc(0.9vw + 12px), 18px);
+  line-height: var(--lh-body);
+  font-size: clamp(var(--fs-body-min), calc(var(--fs-body-vw) + var(--fs-body-add)), var(--fs-body-max));
+}
+
+
+/* Headings: shared base */
+:where(h1, h2, h3, h4, h5, h6) {
+  line-height: 1.15;
+  margin: 0 0 var(--space-4);
+  font-family: var(--font-sans);
+  font-weight: 700;
+  color: var(--text-bright-high);
+}
+
+/* Smaller headings slightly lighter */
+:where(h4, h5, h6) { font-weight: 600; }
+
+/* Sizes via tokens (single source of truth) */
+h1 { font-size: clamp(var(--fs-h1-min), var(--fs-h1-vw), var(--fs-h1-max)); margin-bottom: var(--mb-h1); }
+h2 { font-size: clamp(var(--fs-h2-min), var(--fs-h2-vw), var(--fs-h2-max)); margin-bottom: var(--mb-h2); }
+h3 { font-size: clamp(var(--fs-h3-min), var(--fs-h3-vw), var(--fs-h3-max)); margin-bottom: var(--mb-h3); }
+
+/* Fixed sizes for small headings */
 h4 { font-size: 18px; }
 h5 { font-size: 16px; }
-h6 { font-size: 14px; color: var(--text-dim); letter-spacing: .02em; }
+h6 { font-size: 14px; letter-spacing: .02em; color: var(--text-dim-high); }
+
+/* Paragraph rhythm */
+p { margin: 0 0 var(--mb-p); color: var(--text-dim-high); }
+
 
 p { margin: 0 0 var(--space-5); }
-.lead { font-size: clamp(18px, calc(1.2vw + 14px), 22px); }
-.muted { color: var(--text-dim); }
+a { color: var(--text-link); }
+.lead { font-size: clamp(18px, calc(1.2vw + 14px), 22px); color: var(--text-bright-low); }
+.muted { color: var(--text-dim-low); }
 .eyebrow { text-transform: uppercase; letter-spacing: .08em; font-size: 12px; color: var(--text-dim); }
 
 code, kbd, pre { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; }
 code { background: #0c1116; border: 1px solid var(--border); border-radius: 8px; padding: 0 .35em; }
 pre { background: #0c1116; border: 1px solid var(--border); border-radius: var(--radius); padding: var(--space-6); overflow: auto; }
 pre code { background: transparent; border: 0; padding: 0; }
+.code, code, pre, table { font-feature-settings: var(--num-features); }
+.code, code, pre { background: var(--surface-2); color: var(--text-bright-low); }
+
+hr { border: 0; border-top: 1px solid var(--surface-2); margin: var(--space-8) 0; }
