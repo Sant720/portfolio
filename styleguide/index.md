@@ -4,7 +4,7 @@ title: Styleguide
 robots: "noindex, nofollow"
 ---
 
-<div class="hero">
+<div>
   <div class="eyebrow">System</div>
   <h1>Design Tokens & Type</h1>
   <p class="lead">Quick visual check to keep styles consistent as the site grows.</p>

@@ -17,18 +17,43 @@ a { color: var(--text-link); text-decoration: none; }
 
 .sidebar {
   position: fixed; left: 0; top: 0; bottom: 0; width: var(--sidebar-w);
-  background: var(--surface); border-right: 1px solid var(--border); padding: 30px 10px;
+  background: var(--surface); border-right: 1px solid var(--border); padding: 24px 10px;
   overflow-y: auto; overscroll-behavior: contain;
+  display: flex; flex-direction: column; gap: 0px;
+  justify-content: space-between;
+  // border: 2px solid blue; /* temporary */
 }
 
-.brand a { display: inline-block; font-weight: 800; color: var(--text-bright-high); background: #0c1116; padding: 6px 10px; border-radius: 10px; }
+
 
 /* Outer area accounts for the fixed sidebar; inner .container is centered */
 #content { width: calc(100vw - var(--sidebar-w)); margin-left: var(--sidebar-w); }
-.container { max-width: var(--container); margin-inline: auto; padding: 96px 32px; }
+.container { max-width: var(--container); margin-inline: auto; margin-top: 96px; 
+  // border: 2px solid green; /* temporary */ 
+  }
 
-.hero {}
-.hero h1 { margin: 0 0 10px; font-size: 60px; }
+.hero {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 16px;
+}
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  // border: 2px solid red; /* temporary */
+}
+
+.hero__image {
+  display: flex;
+  flex-direction: column;
+  // border: 2px solid red; /* temporary */
+  background-color: var(--accent);
+  width: 250px;
+  height : 300px;
+  border-radius: 16px;
+}
 
 .grid { display: grid; gap: var(--gap); grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
 
@@ -36,7 +61,7 @@ a { color: var(--text-link); text-decoration: none; }
   background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px;
   transition: transform .2s ease, border-color .2s ease;
 }
-// a.card { color: var(--text-bright-low); }
+
 .card:hover, .card:focus-within { border-color: var(--accent); }
 .card__title { color: var(--text-bright-high); }
 .card__desc { color: var(--text-dim-low);} 
@@ -53,9 +78,12 @@ a { color: var(--text-link); text-decoration: none; }
 }
 
 /* --- Nav styles --- */
-.site-nav .nav-group { margin: 24px 0; }
-.site-nav .nav-heading {
-  color: var(--text-dim-high); font-size: 12px; letter-spacing: .06em;
+.site-nav { 
+  // border: 2px solid yellow; /* temporary */
+  flex: 1;} 
+// .site-nav .nav-group { margin: 24px 0; }
+.site-nav .nav-section {
+  color: var(--text-dim-low); font-size: 12px; letter-spacing: .08em;
   text-transform: uppercase; margin: 16px 16px 8px;
 }
 .nav-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0px; }
@@ -149,15 +177,47 @@ a:hover, a:focus { text-decoration: none; }
   position: fixed;                    /* your current layout */
 }
 
+.brand { display: flex; flex: 1; }
+
+.brand .brand__logo {
+  width: 40px; height: 40px;
+  background-color: var(--accent);
+  border-radius: 12px;
+  margin-right: 12px;
+}
+
+.brand .brand__text p:first-child {
+  font-size: var(--fs-body-max);
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.2;
+  color: var(--text-bright-high);
+}
+
+.brand .brand__text p:last-child {
+  font-size: var(--fs-body-xs);
+  font-weight: 500;
+  margin: var(--space-1) 0 0 0;
+  line-height: 1.2;
+  color: var(--text-bright-low);
+}
+
 .sidebar .brand {
   position: sticky;                   /* sticks within the sidebar scroll container */
   top: 0;
   z-index: 20;
   /* expand to the sidebar edges despite its padding */
   margin: -24px -24px 12px;           /* match your .sidebar padding (24px) */
-  padding: 16px 24px 20px;
-  background: var(--surface);         /* solid backplate for readability */
+  padding: 32px 32px;
   border-bottom: 1px solid var(--border);
+  // border: 2px solid purple; /* temporary */
+  background: var(--surface);
+}
+
+.brand-container {
+ position: sticky;                   /* sticks within the sidebar scroll container */
+  top: 0;
+  z-index: 20;
 }
 
 /* Optional: subtle fade below the brand */

@@ -19,8 +19,14 @@
   <body>
     <a class="skip-link" href="#content">Skip to content</a>
     <aside class="sidebar" aria-label="Primary">
-      <div class="brand">
-        <a href="{{ '/' | relative_url }}">SB</a>
+      <div class="brand-container">
+        <a class="brand" href="{{ '/' | relative_url }}">
+        <div class="brand__logo"></div>  
+        <div class="brand__text">
+        <p>Santiago Bolivar</p>
+        <p>Senior Technical Writer</p>
+        </div>
+        </a>
       </div>
       <nav class="site-nav">
         {%- assign nav = site.data.nav -%}
@@ -28,7 +34,7 @@
           {%- for group in nav.groups -%}
             <div class="nav-group">
               {%- if group.label -%}
-                <div class="nav-heading">{{ group.label }}</div>
+                <div class="nav-section">{{ group.label }}</div>
               {%- endif -%}
               <ul class="nav-list">
                 {%- for item in group.items -%}

@@ -1,5 +1,6 @@
 groups:
-  - items:
+  - label: General
+    items:
       - title: Home
         url: /
         emoji: "🧭"
@@ -28,21 +29,6 @@ groups:
         emoji: "🧱"
         # badge: 8
 
-  # - label: Extras
-  #   items:
-  #     - title: Guest Book
-  #       url: /guestbook/
-  #       emoji: "📓"
-  #       kbd: "G"
-  #     - title: Dont Click
-  #       url: /dont-click/
-  #       emoji: "⚠️"
-  #       kbd: "D"
-  #     - title: Ftp Manager
-  #       url: /ftp/
-  #       emoji: "📁"
-  #       kbd: "F"
-
   - label: Connect
     items:
       - title: Email
@@ -57,3 +43,15 @@ groups:
         url: "https://github.com/your-handle"
         emoji: "🐙"
         external: true
+
+  - label: Extras
+    items:
+      - title: Guest Book
+        url: /guestbook/
+        emoji: "📓"
+      - title: Dont Click
+        url: /dont-click/
+        emoji: "⚠️"
+      - title: Ftp Manager
+        url: /ftp/
+        emoji: "📁"
