@@ -63,5 +63,5 @@ robots: "noindex, nofollow"
 <p>
   <a class="btn btn--primary" href="#">Primary</a>
   <a class="btn" href="#">Ghost</a>
-  <span class="sg-chip">Badge</span>
+  <span class="badge">Badge</span>
 </p>
