@@ -1,9 +1,6 @@
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 
-/* Sidebar width token (single source of truth) */
-:root { --sidebar-w: 280px; }
-
 body {
   background: var(--bg);
 }
@@ -27,8 +24,9 @@ a { color: var(--text-link); text-decoration: none; }
 
 
 /* Outer area accounts for the fixed sidebar; inner .container is centered */
-#content { width: calc(100vw - var(--sidebar-w)); margin-left: var(--sidebar-w); }
-.container { max-width: var(--container); margin-inline: auto; margin-top: 96px; 
+#content { width: calc(100vw - var(--sidebar-w)); margin: 0; margin-left: calc(var(--sidebar-w) - 1.5vw); padding-top: 120px;}
+.container { max-width: var(--container); margin-inline: auto; 
+  // margin-top: 96px; 
   // border: 2px solid green; /* temporary */ 
   }
 
@@ -66,16 +64,7 @@ a { color: var(--text-link); text-decoration: none; }
 .card__title { color: var(--text-bright-high); }
 .card__desc { color: var(--text-dim-low);} 
 
-/* --- Desktop shrink steps --- */
-@media (max-width: 1200px) { :root { --sidebar-w: 250px; } }
-@media (max-width: 1024px) { :root { --sidebar-w: 220px; } }
 
-/* --- Mobile collapse --- */
-@media (max-width: 720px) {
-  .sidebar { position: static; width: auto; height: auto; }
-  #content { width: 100vw; margin-left: 0; }
-  .container { margin-inline: auto; }
-}
 
 /* --- Nav styles --- */
 .site-nav { 
@@ -96,17 +85,7 @@ a { color: var(--text-link); text-decoration: none; }
 .nav-emoji { width: 20px; display: inline-flex; justify-content: center; }
 .nav-title { font-weight: 500; }
 .spacer { flex: 1; }
-.badge {
-  display: inline-flex; min-width: 20px; height: 20px; padding: 0 6px;
-  align-items: center; justify-content: center; font-size: 12px;
-  border-radius: 999px; background: var(--surface-2); border: 1px solid var(--border);
-  color: var(--text-dim-low);
-}
-.kbd {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
-  font-size: 12px; padding: 2px 6px; border: 1px solid var(--border);
-  border-bottom-width: 2px; border-radius: 6px; background: var(--surface-2); color: var(--text-dim-high);
-}
+
 .ext { margin-left: 6px; opacity: .7; }
 
 /* --- Stage 2 additions --- */
@@ -124,6 +103,7 @@ a:hover, a:focus { text-decoration: none; }
   border: 1px solid var(--border); background: var(--surface);
   color: var(--text-bright-low); text-decoration: none;
   transition: transform var(--dur-100) var(--ease), border-color var(--dur-100) var(--ease);
+  font-size: var(--fs-body-md);
 }
 .btn:hover { color: var(--text-bright-high)}
 .btn--primary { background: var(--accent); color: var(--text-bright-low); border-color: hsl(0, 0%, 22%); }
@@ -228,13 +208,23 @@ a:hover, a:focus { text-decoration: none; }
   pointer-events: none;
 }
 
+/* --- Desktop shrink steps --- */
+@media (max-width: 1200px) { :root { --sidebar-w: 0px; } .sidebar { display: none;} }
+// @media (max-width: 1024px) { :root { --sidebar-w: 0px; } .sidebar { display: none;} }
+
+/* --- Mobile collapse --- */
+// @media (max-width: 1024px) {
+//   :root { --sidebar-w: 0px; }
+//   .sidebar { display: none;}
+//   #content { width: 80vw; margin-left: 0; }
+//   .container { margin-inline: auto; }
+// }
+
 /* Mobile: when the sidebar stacks, don’t keep the brand sticky */
-@media (max-width: 720px) {
-  .sidebar .brand {
-    position: static;
-    margin: 0 0 12px;
-    padding: 0;
-    border-bottom: none;
-  }
-}
+// @media (max-width: 720px) {
+//   .sidebar .brand {
+//     display: none;
+//   }
+//   :root { --sidebar-widht: 0px; }
+// }
 
