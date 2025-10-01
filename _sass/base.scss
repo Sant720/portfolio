@@ -1,3 +1,23 @@
+// Social icon styles
+.hero-socials {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+  a {
+    display: inline-flex;
+    align-items: center;
+    svg {
+      width: 24px;
+      height: 24px;
+      color: var(--text-bright-low);
+      transition: color var(--dur-100) var(--ease);
+    }
+    &:hover svg,
+    &:focus svg {
+      color: var(--text-bright-high);
+    }
+  }
+}
 
 // Base resets
 * { box-sizing: border-box; }
@@ -13,7 +33,7 @@ a {
 
 // Hero socials
 
-.hero-socials a {color: var(--accent); margin-right: 12px; }
+.hero-socials img {display: inline-block; color: #fff; margin-right: 12px; }
 
 // Accessibility
 .skip-link {
