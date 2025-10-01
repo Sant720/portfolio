@@ -11,6 +11,10 @@ a {
   transition: color var(--dur-100) var(--ease), opacity var(--dur-100) var(--ease);
 }
 
+// Hero socials
+
+.hero-socials a {color: var(--accent); margin-right: 12px; }
+
 // Accessibility
 .skip-link {
   position: absolute;
