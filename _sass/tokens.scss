@@ -1,37 +1,52 @@
+
 :root {
-  /* — Colors — */
-  --bg: hsl(0, 0%, 9%);
-  --accent: hsl(0, 0%, 17%);
-  --accent-hover: hsl(0, 0%, 19%);
-  --surface: hsl(0, 0%, 11%);
-  --surface-2: var(--accent);
-  --text-bright-high: hsl(0, 0%, 96%);
-  --text-bright-low: hsl(0, 0%, 80%);
-  --text-dim-high: hsl(0, 0%, 60%);
-  --text-dim-low: hsl(0, 0%, 52%);
-  --text-link: #4493f8;
-  --border: hsl(0, 0%, 14%);
-  --focus: var(--accent);
+  // --- Color Tokens ---
+  --bg: hsl(0, 0%, 9%);                // Background
+  --accent: hsl(0, 0%, 17%);           // Accent color
+  --accent-hover: hsl(0, 0%, 19%);     // Accent hover
+  --surface: hsl(0, 0%, 11%);          // Main surface
+  --surface-2: var(--accent);          // Secondary surface
+  --text-bright-high: hsl(0, 0%, 96%); // High contrast text
+  --text-bright-low: hsl(0, 0%, 80%);  // Low contrast text
+  --text-dim-high: hsl(0, 0%, 60%);    // Dimmed text
+  --text-dim-low: hsl(0, 0%, 52%);     // Dimmed, lower contrast
+  --border: hsl(0, 0%, 14%);           // Border color
+  --focus: var(--accent);              // Focus ring
+  --text-link: #4493f8;                  // Link color
 
-  /* Sidebar width token (single source of truth) */
-  --sidebar-w: 260px;
+  // --- Sidebar ---
+  --sidebar-w: 260px;                  // Sidebar width
 
-  /* Fonts */ 
+  // --- Typography ---
   --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
   --lh-body: 1.6;
+  // Font sizes
+  --fs-body-min: 16px;
+  --fs-body-vw: 0.9vw;
+  --fs-body-add: 14px;
+  --fs-body-max: 18px;
+  --fs-body-xs: 12px;
+  --fs-body-sm: 14px;
+  --fs-body-md: 16px;
+  --fs-body-lg: 18px;
+  --fs-body-xl: 20px;
+  // Heading sizes
+  --fs-h1-min: 34px;
+  --fs-h1-vw: 4.2vw;
+  --fs-h1-max: 46px;
+  --fs-h2-min: 26px;
+  --fs-h2-vw: 3.2vw;
+  --fs-h2-max: 34px;
+  --fs-h3-min: 20px;
+  --fs-h3-vw: 2.2vw;
+  --fs-h3-max: 24px;
 
-  --fs-body-min: 16px;   --fs-body-vw: 0.9vw;  --fs-body-add: 14px; --fs-body-max: 18px; 
-  --fs-body-xs: 12px;    --fs-body-sm: 14px;   --fs-body-md: 16px;  --fs-body-lg: 18px; --fs-body-xl: 20px;
-  --fs-h1-min: 34px;     --fs-h1-vw: 4.2vw;    --fs-h1-max: 46px;
-  --fs-h2-min: 26px;     --fs-h2-vw: 3.2vw;    --fs-h2-max: 34px;
-  --fs-h3-min: 20px;     --fs-h3-vw: 2.2vw;    --fs-h3-max: 24px;
-
-  /* Feedback */
+  // --- Feedback Colors ---
   --success: #34d399;
   --warning: #fbbf24;
   --danger:  #f87171;
 
-  /* Spacing scale (4px baseline) */
+  // --- Spacing ---
   --space-1: 4px;
   --space-2: 8px;
   --space-3: 12px;
@@ -41,20 +56,20 @@
   --space-7: 32px;
   --space-8: 40px;
   --space-9: 48px;
-
-  /* Spacing trims for headings */
+  // Spacing for headings/paragraphs
   --mb-h1: var(--space-5);
   --mb-h2: var(--space-4);
   --mb-h3: var(--space-3);
   --mb-p:  var(--space-6);
 
-  /* Numeral features for code/tables */
+  // --- Numeral features for code/tables ---
   --num-features: "tnum" 1, "lnum" 1;
 
-  --gap: 16px; 
+  // --- Gaps ---
+  --gap: 16px;
   --gap-lg: 24px;
 
-  /* Radii & shadows */
+  // --- Radii & Shadows ---
   --radius-sm: 8px;
   --radius:    14px;
   --radius-lg: 20px;
@@ -63,7 +78,7 @@
   --shadow-md: 0 8px 24px rgba(0,0,0,.35);
   --shadow-lg: 0 16px 44px rgba(0,0,0,.45);
 
-  /* Layout & motion */
+  // --- Layout & Motion ---
   --container: 800px;
   --bp-md: 900px;
   --bp-lg: 1200px;

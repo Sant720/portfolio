@@ -1,230 +1,281 @@
+
+// Base resets
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
+body { background: var(--bg); }
 
-body {
-  background: var(--bg);
+// Links
+a {
+  color: var(--text-link);
+  text-decoration: none;
+  transition: color var(--dur-100) var(--ease), opacity var(--dur-100) var(--ease);
 }
 
-a { color: var(--text-link); text-decoration: none; }
-
+// Accessibility
 .skip-link {
-  position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden;
-}
-.skip-link:focus { left: 16px; top: 16px; width: auto; height: auto; padding: 8px 10px; background: var(--surface); border-radius: 8px; outline: 2px solid var(--accent); }
-
-.sidebar {
-  position: fixed; left: 0; top: 0; bottom: 0; width: var(--sidebar-w);
-  background: var(--surface); border-right: 1px solid var(--border); padding: 24px 10px;
-  overflow-y: auto; overscroll-behavior: contain;
-  display: flex; flex-direction: column; gap: 0px;
-  justify-content: space-between;
-  // border: 2px solid blue; /* temporary */
-}
-
-
-
-/* Outer area accounts for the fixed sidebar; inner .container is centered */
-#content { width: calc(100vw - var(--sidebar-w)); margin: 0; margin-left: calc(var(--sidebar-w) - 1.5vw); padding-top: 120px;}
-.container { max-width: var(--container); margin-inline: auto; 
-  // margin-top: 96px; 
-  // border: 2px solid green; /* temporary */ 
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  &:focus {
+    left: 16px;
+    top: 16px;
+    width: auto;
+    height: auto;
+    padding: 8px 10px;
+    background: var(--surface);
+    border-radius: 8px;
+    outline: 2px solid var(--accent);
   }
+}
 
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+
+// Sidebar
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: var(--sidebar-w);
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+  padding: 24px 8px;
+  overscroll-behavior: contain;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  justify-content: space-between;
+  overflow: hidden auto;
+  // Scrollbar styles
+  scrollbar-width: thin; // Firefox
+  scrollbar-color: var(--border) transparent;
+  scrollbar-gutter: stable both-edges;
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border-radius: 10px;
+    border: 2px solid transparent;
+  }
+  &:hover::-webkit-scrollbar-thumb,S
+  &:focus-within::-webkit-scrollbar-thumb {
+    background-color: #3a4659;
+  }
+  &:hover::-webkit-scrollbar-thumb,
+  &:focus-within::-webkit-scrollbar-thumb {
+    background-color: var(--surface-2);
+  }
+  // Brand sticky
+  .brand {
+    position: sticky;
+    top: 0;
+    margin: -24px -24px 12px;
+    padding: 32px;
+    background: var(--surface);
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0; right: 0; bottom: -12px; height: 12px;
+      background: linear-gradient(to bottom, rgba(0,0,0,.1), rgba(0,0,0,0));
+      pointer-events: none;
+    }
+  }
+}
+
+.brand {
+  display: flex;
+  .brand__logo {
+    width: 40px;
+    height: 40px;
+    background-color: var(--accent);
+    border-radius: 12px;
+    margin-right: 12px;
+  }
+  .brand__text {
+    p:first-child {
+      font-size: var(--fs-body-max);
+      font-weight: 600;
+      margin: 0;
+      line-height: 1.2;
+      color: var(--text-bright-high);
+    }
+    p:last-child {
+      font-size: var(--fs-body-xs);
+      font-weight: 500;
+      margin: var(--space-1) 0 0 0;
+      line-height: 1.2;
+      color: var(--text-bright-low);
+    }
+  }
+}
+
+.brand-container {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+// Layout
+#content {
+  width: calc(100vw - var(--sidebar-w));
+  margin: 0;
+  margin-left: calc(var(--sidebar-w) - 1.5vw);
+  padding-top: 120px;
+}
+.container {
+  max-width: var(--container);
+  margin-inline: auto;
+}
+
+// Hero
 .hero {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   gap: 16px;
-}
-.hero__content {
-  display: flex;
-  flex-direction: column;
-  width: 60%;
-  // border: 2px solid red; /* temporary */
-}
-
-.hero__image {
-  display: flex;
-  flex-direction: column;
-  // border: 2px solid red; /* temporary */
-  background-color: var(--accent);
-  width: 250px;
-  height : 300px;
-  border-radius: 16px;
+  &__content {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+  }
+  &__image {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--accent);
+    width: 250px;
+    height: 300px;
+    border-radius: 16px;
+  }
 }
 
-.grid { display: grid; gap: var(--gap); grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
-
+// Grid & Card
+.grid {
+  display: grid;
+  gap: var(--gap);
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
 .card {
-  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
   transition: transform .2s ease, border-color .2s ease;
+  &:hover,
+  &:focus-within {
+    border-color: var(--accent);
+  }
+  &__title { color: var(--text-bright-high); }
+  &__desc { color: var(--text-dim-low); }
 }
 
-.card:hover, .card:focus-within { border-color: var(--accent); }
-.card__title { color: var(--text-bright-high); }
-.card__desc { color: var(--text-dim-low);} 
-
-
-
-/* --- Nav styles --- */
-.site-nav { 
-  // border: 2px solid yellow; /* temporary */
-  flex: 1;} 
-// .site-nav .nav-group { margin: 24px 0; }
-.site-nav .nav-section {
-  color: var(--text-dim-low); font-size: 12px; letter-spacing: .08em;
-  text-transform: uppercase; margin: 16px 16px 8px;
+// Nav styles
+.site-nav {
+  flex: 1;
+  .nav-section {
+    color: var(--text-dim-low);
+    font-size: 12px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    margin: 16px 16px 8px;
+  }
 }
-.nav-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0px; }
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+}
 .nav-link {
-  display: flex; align-items: center; gap: 10px;
-  padding: 10px 12px; border-radius: 12px; color: var(--text-dim-high);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  color: var(--text-dim-high);
   border: 1px solid transparent;
+  &:hover,
+  &:focus {
+    color: var(--text-bright-high);
+    background: var(--accent);
+    border-color: var(--border);
+    text-decoration: none;
+  }
 }
-.nav-link:hover, .nav-link:focus { color: var(--text-bright-high); background: var(--accent); border-color: var(--border); text-decoration: none; }
 .nav-emoji { width: 20px; display: inline-flex; justify-content: center; }
 .nav-title { font-weight: 500; }
 .spacer { flex: 1; }
-
 .ext { margin-left: 6px; opacity: .7; }
 
-/* --- Stage 2 additions --- */
-a {
-  color: var(--accent);
-  transition: color var(--dur-100) var(--ease), opacity var(--dur-100) var(--ease);
-}
-a:hover, a:focus { text-decoration: none; }
-
-:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
-
+// Buttons
 .btn {
-  display: inline-flex; align-items: center; gap: 8px;
-  padding: 10px 14px; border-radius: 12px;
-  border: 1px solid var(--border); background: var(--surface);
-  color: var(--text-bright-low); text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-bright-low);
+  text-decoration: none;
   transition: transform var(--dur-100) var(--ease), border-color var(--dur-100) var(--ease);
   font-size: var(--fs-body-md);
+  &:hover { color: var(--text-bright-high); }
+  &--primary {
+    background: var(--accent);
+    color: var(--text-bright-low);
+    border-color: hsl(0, 0%, 22%);
+    &:hover { background: var(--accent-hover); }
+  }
 }
-.btn:hover { color: var(--text-bright-high)}
-.btn--primary { background: var(--accent); color: var(--text-bright-low); border-color: hsl(0, 0%, 22%); }
-.btn--primary:hover { background: var(--accent-hover); }
 
-.sg-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px,1fr)); gap: var(--space-6); }
-.sg-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: var(--space-6); }
-.badge { display:inline-block; padding:.30rem .75rem; border:1px solid var(--border); border-radius:16px; color:var(--text-dim-high); background-color: var(--surface); font-size: var(--fs-body-md); }
+// Styleguide
+.sg-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px,1fr));
+  gap: var(--space-6);
+}
+.sg-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--space-6);
+}
+.badge {
+  display: inline-block;
+  padding: .30rem .75rem;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  color: var(--text-dim-high);
+  background-color: var(--surface);
+  font-size: var(--fs-body-md);
+}
 
+// Reduced motion
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }
 }
 
-/*  scrollbar — scoped, subtle, accessible */
-.sidebar {
-  /* Only vertical scroll; no horizontal bar */
-  overflow: hidden auto;
-
-  /* Firefox */
-  scrollbar-width: thin;
-  scrollbar-color: var(--border) transparent;
-
-  /* Prevent layout nudge when scrollbars appear */
-  scrollbar-gutter: stable both-edges;
+// Responsive
+@media (max-width: 1200px) {
+  :root { --sidebar-w: 0px; }
+  .sidebar { display: none; }
 }
-
-/* Chromium/WebKit */
-.sidebar::-webkit-scrollbar {
-  width: 6px;
-}
-.sidebar::-webkit-scrollbar-track {
-  background: transparent;
-}
-.sidebar::-webkit-scrollbar-thumb {
-  background-color: #2a3443;         /* subtle thumb on dark UI */
-  border-radius: 10px;
-  border: 2px solid transparent;     /* creates a little gap from the edge */
-}
-.sidebar:hover::-webkit-scrollbar-thumb,
-.sidebar:focus-within::-webkit-scrollbar-thumb {
-  background-color: var(--surface-2);         /* slightly brighter on hover/focus */
-}
-
-.sidebar::-webkit-scrollbar-thumb { background-color: transparent; }
-.sidebar:hover::-webkit-scrollbar-thumb,
-.sidebar:focus-within::-webkit-scrollbar-thumb { background-color: #3a4659; }
-
-/* Freeze the brand row at the top of the scrolling sidebar */
-.sidebar {
-  overflow: hidden auto;              /* already set; keep the sidebar scroll */
-  position: fixed;                    /* your current layout */
-}
-
-.brand { display: flex; flex: 1; }
-
-.brand .brand__logo {
-  width: 40px; height: 40px;
-  background-color: var(--accent);
-  border-radius: 12px;
-  margin-right: 12px;
-}
-
-.brand .brand__text p:first-child {
-  font-size: var(--fs-body-max);
-  font-weight: 600;
-  margin: 0;
-  line-height: 1.2;
-  color: var(--text-bright-high);
-}
-
-.brand .brand__text p:last-child {
-  font-size: var(--fs-body-xs);
-  font-weight: 500;
-  margin: var(--space-1) 0 0 0;
-  line-height: 1.2;
-  color: var(--text-bright-low);
-}
-
-.sidebar .brand {
-  position: sticky;                   /* sticks within the sidebar scroll container */
-  top: 0;
-  z-index: 20;
-  /* expand to the sidebar edges despite its padding */
-  margin: -24px -24px 12px;           /* match your .sidebar padding (24px) */
-  padding: 32px 32px;
-  border-bottom: 1px solid var(--border);
-  // border: 2px solid purple; /* temporary */
-  background: var(--surface);
-}
-
-.brand-container {
- position: sticky;                   /* sticks within the sidebar scroll container */
-  top: 0;
-  z-index: 20;
-}
-
-/* Optional: subtle fade below the brand */
-.sidebar .brand::after {
-  content: "";
-  position: absolute; left: 0; right: 0; bottom: -12px; height: 12px;
-  background: linear-gradient(to bottom, rgba(0,0,0,.18), rgba(0,0,0,0));
-  pointer-events: none;
-}
-
-/* --- Desktop shrink steps --- */
-@media (max-width: 1200px) { :root { --sidebar-w: 0px; } .sidebar { display: none;} }
-// @media (max-width: 1024px) { :root { --sidebar-w: 0px; } .sidebar { display: none;} }
-
-/* --- Mobile collapse --- */
+// Uncomment and adjust for more breakpoints as needed
 // @media (max-width: 1024px) {
 //   :root { --sidebar-w: 0px; }
-//   .sidebar { display: none;}
+//   .sidebar { display: none; }
 //   #content { width: 80vw; margin-left: 0; }
 //   .container { margin-inline: auto; }
 // }
-
-/* Mobile: when the sidebar stacks, don’t keep the brand sticky */
 // @media (max-width: 720px) {
-//   .sidebar .brand {
-//     display: none;
-//   }
-//   :root { --sidebar-widht: 0px; }
+//   .sidebar .brand { display: none; }
+//   :root { --sidebar-width: 0px; }
 // }
-
