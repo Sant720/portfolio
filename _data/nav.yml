@@ -19,7 +19,6 @@ groups:
       - title: Thoughts
         url: /thoughts/
         svg: "book-open"
-
       - title: Stack
         url: /stack/
         svg: "layers"
@@ -44,10 +43,8 @@ groups:
     items:
       - title: Guest Book
         url: /guestbook/
-
       - title: Dont Click
         url: /dont-click/
-
       - title: Ftp Manager
         url: /ftp/
 
