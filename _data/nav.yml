@@ -3,55 +3,51 @@ groups:
     items:
       - title: Home
         url: /
-        emoji: "🧭"
-        # badge: 1
+        svg: "home"
       - title: Experience
         url: /experience/
-        emoji: "💼"
-        # badge: 2
+        svg: "briefcase"
       - title: Projects
         url: /projects/
-        emoji: "✏️"
-        # badge: 3
+        svg: "box"
       - title: About
         url: /about/
-        emoji: "👤"
-        # badge: 5
+        svg: "user"
 
   - label: Resources
     items:
       - title: Thoughts
         url: /thoughts/
-        emoji: "🗒️"
-        # badge: 7
+        svg: "book-open"
+
       - title: Stack
         url: /stack/
-        emoji: "🧱"
-        # badge: 8
+        svg: "layers"
+
 
   - label: Contact
     items:
       - title: Email
         url: "mailto:santiago.bolivar7@gmail.com"
-        emoji: "📧"
+        svg: "mail"
         external: true
       - title: LinkedIn
         url: "https://www.linkedin.com/in/your-handle"
-        emoji: "💼"
+        svg: "linkedin"
         external: true
       - title: Github
         url: "https://github.com/your-handle"
-        emoji: "🐙"
+        svg: "github"
         external: true
 
   - label: Extras
     items:
       - title: Guest Book
         url: /guestbook/
-        emoji: "📓"
+
       - title: Dont Click
         url: /dont-click/
-        emoji: "⚠️"
+
       - title: Ftp Manager
         url: /ftp/
-        emoji: "📁"
+
