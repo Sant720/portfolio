@@ -236,20 +236,29 @@ a {
   align-items: center;
   gap: 8px;
   padding: 10px 14px;
-  border-radius: 12px;
+  border-radius: 8px;
   border: 1px solid var(--border);
   background: var(--surface);
   color: var(--text-bright-low);
+  border-color: var(--border);
   text-decoration: none;
   transition: transform var(--dur-100) var(--ease), border-color var(--dur-100) var(--ease);
   font-size: var(--fs-body-md);
   &:hover { color: var(--text-bright-high); }
   &--primary {
     background: var(--accent);
-    color: var(--text-bright-low);
-    border-color: hsl(0, 0%, 22%);
     &:hover { background: var(--accent-hover); }
   }
+  &--secondary {
+    background: var(--surface);
+  }
+}
+
+.btn-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
 }
 
 // Styleguide
