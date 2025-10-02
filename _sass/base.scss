@@ -3,6 +3,19 @@
 html, body { margin: 0; padding: 0; }
 body { background: var(--bg); }
 
+// SVG
+
+svg {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
 // Links
 a {
   color: var(--text-link);
