@@ -31,11 +31,11 @@ groups:
         svg: "mail"
         external: true
       - title: LinkedIn
-        url: "https://www.linkedin.com/in/your-handle"
+        url: "https://www.linkedin.com/in/santibolivar/"
         svg: "linkedin"
         external: true
       - title: Github
-        url: "https://github.com/your-handle"
+        url: "https://github.com/Sant720"
         svg: "github"
         external: true
 
