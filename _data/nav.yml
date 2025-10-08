@@ -39,12 +39,12 @@ groups:
         svg: "github"
         external: true
 
-  - label: Extras
-    items:
-      - title: Guest Book
-        url: /guestbook/
-      - title: Dont Click
-        url: /dont-click/
-      - title: Ftp Manager
-        url: /ftp/
+  # - label: Extras
+  #   items:
+  #     - title: Guest Book
+  #       url: /guestbook/
+  #     - title: Dont Click
+  #       url: /dont-click/
+  #     - title: Ftp Manager
+  #       url: /ftp/
 
