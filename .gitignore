@@ -1,24 +1,35 @@
-# Jekyll build artifacts
+# --- Jekyll build artifacts ---
 _site/
-.jekyll-cache/
 .sass-cache/
+.jekyll-cache/
 .jekyll-metadata
 
 # Bundler
-vendor/bundle/
 .bundle/
+vendor/bundle/
 
-# Local-only config
-_config.local.yml
+# Node (if you add tooling)
+node_modules/
+.pnpm-store/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
 # OS cruft
 .DS_Store
 Thumbs.db
+ehthumbs.db
+Icon?
+desktop.ini
 
-# Editor/IDE cache
-*.swp
-*.swo
-.idea/
+# VS Code
+.vscode/
+.history/
 
-# Node (if you ever add tooling)
-node_modules/
+# Logs
+*.log
+
+# --- Windows ADS sidecar files that slipped into the tree ---
+# They often appear as `filename<private-char>Zone.Identifier`
+# or similar when zipped/moved between Windows and WSL.
+**/*Zone.Identifier*
