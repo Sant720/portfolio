@@ -1,0 +1,17 @@
+<div class="topbar" role="banner">
+  <a class="topbar__logo" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+
+  <div class="topbar__actions">
+    {% if site.email %}
+      <a class="topbar__cta" href="mailto:{% if site.email contains '@' %}{{ site.email }}{% else %}{{ site.email | escape }}{% endif %}">
+        Contact
+      </a>
+    {% endif %}
+    {% if site.github_username %}
+      <a class="topbar__link" href="https://github.com/{{ site.github_username }}" rel="me">GitHub</a>
+    {% endif %}
+    {% if site.linkedin %}
+      <a class="topbar__link" href="{{ site.linkedin }}" rel="me">LinkedIn</a>
+    {% endif %}
+  </div>
+</div>
