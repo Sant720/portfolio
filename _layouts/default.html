@@ -17,6 +17,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/favicon/favicon-180.png' | relative_url }}">
   </head>
   <body>
+    
     <a class="skip-link" href="#content">Skip to content</a>
     <aside class="sidebar" aria-label="Primary">
       <div class="brand-container">
@@ -57,10 +58,17 @@
         {%- endif -%}
       </nav>
     </aside>
+    <!-- <header class="site__header">
+  {% include header.html %}
+</header> -->
     <main id="content">
-      <div class="container">
+      <div class="container site__main">
         {{ content }}
-      </div>
+        <footer class="site__footer">
+  {% include footer.html %}
+</footer>
+</div>   
     </main>
+
   </body>
 </html>

@@ -244,6 +244,12 @@ a {
 .spacer { flex: 1; }
 .ext { margin-left: 6px; opacity: .7; }
 
+// Footer
+.footer-inner { padding: var(--space-5) 0; color: var(--text-dim-low); }
+.footer-inner p { color: var(--text-dim-low); }
+.footer-inner a { color: var(--text-dim-high); }
+.footer-inner a:hover { color: var(--text-bright-low); }
+
 // Buttons
 .btn {
   display: inline-flex;
