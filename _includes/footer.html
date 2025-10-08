@@ -1,0 +1,12 @@
+<div class="footer-inner" role="contentinfo">
+  <p>© {{ site.time | date: '%Y' }} {{ site.author | default: site.title }}</p>
+  <p class="dim">
+    Built with Jekyll.
+    {% if site.github.repository_url %}
+      <a href="{{ site.github.repository_url }}">View source</a>
+    {% endif %}
+    {% if site.url %}
+      • <a href="{{ '/sitemap.xml' | relative_url }}">Sitemap</a>
+    {% endif %}
+  </p>
+</div>
