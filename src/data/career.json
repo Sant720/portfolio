@@ -35,11 +35,48 @@
       "href": "https://www.bairesdev.com/",
       "title": "Marketing & Communications Assistant",
       "logo": "/bairesdev-logo.svg",
-      "start": "Feb 2025",
-      "end": "Sep 2025",
+      "start": "Aug 2019",
+      "end": "Jun 2021",
       "description": [
         "Collaborated with engineering teams to translate technical concepts into B2B marketing collateral, case studies, and web copy.", 
         "Led the SEO Optimization of 50+ business-critical landing pages, placing ~80% of them on the first page of Google."
+      ],
+      "links": [
+        {
+          "name": "Button/tag",
+          "href": "https://github.com/",
+          "icon": "globe"
+        }
+      ]
+    },
+    {
+      "name": "Almerco",
+      "href": "https://almerco.pe/",
+      "title": "Marketing Associate ",
+      "logo": "/almerco-logo.png",
+      "start": "Dec 2018",
+      "end": "Aug 2019",
+      "description": [
+        "Maintain and optimize the company's WordPress website to support consistent messaging, improve SEO, and enhance UX.", 
+        "Write blog posts and landing pages that translated complex legal case details into clear, accessible content for general audiences."
+      ],
+      "links": [
+        {
+          "name": "Button/tag",
+          "href": "https://github.com/",
+          "icon": "globe"
+        }
+      ]
+    },
+    {
+      "name": "Waldorf Astoria Park City",
+      "href": "https://www.hilton.com/en/hotels/slcdmwa-waldorf-astoria-park-city/",
+      "title": "Host/Guest Services",
+      "logo": "/waldorf-astoria-logo.svg",
+      "start": "Dec 2018",
+      "end": "Aug 2019",
+      "description": [
+        "Deliver exceptional guest experiences by managing reservations, seating logistics, and personalized service for high-profile clientele, maintaining 5-star guest satisfaction scores."
       ],
       "links": [
         {
