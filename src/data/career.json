@@ -1,14 +1,15 @@
 {
   "career": [
     {
-      "name": "Company",
+      "name": "Uber",
       "href": "https://github.com/",
-      "title": "Job title",
-      "logo": "/dbs.png",
-      "start": "Jul 2023",
+      "title": "Senior Technical Writer",
+      "logo": "/uber-logo-square.jpg",
+      "start": "May 2021",
       "description": [
-        "Developed the Java backend for a bank account servicing process with multiple channel integrations using Activiti workflow",
-        "Built a custom database migration tool using Python and MariaDB and facilitated the migration of 1000+ processes from a vendor platform"
+        "Own and maintain internal documentation for third-party GenAI tools (e.g., ChatGPT, Gemini, Glean, Zoom AI), ensuring clarity, consistency, and alignment with enterprise policies and security constraints.",
+        "Collaborate with App Owners to create and maintain user-facing and service desk documentation for Enterprise Apps (e.g. Google Workspace, Slack, Figma) ensuring accuracy and usability across internal audiences.",
+        "Monitor and respond to user feedback from ServiceNow and Slack, updating documentation based on common questions and usage gaps to improve clarity and user satisfaction."
       ]
     },
     {
