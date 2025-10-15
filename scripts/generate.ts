@@ -87,3 +87,5 @@ dotenv.config({ path: ".env.local" });
 // }
 
 // generateEmbeddings();
+
+export {}; // tells TypeScript this is a valid module

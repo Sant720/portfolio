@@ -2,6 +2,16 @@
 // import { AstraDBVectorStore } from "@langchain/community/vectorstores/astradb";
 // import { OpenAIEmbeddings } from "@langchain/openai";
 
+export async function getVectorStore() {
+  console.warn("Astra DB is currently disabled.");
+  return null;
+}
+
+export async function getEmbeddingsCollection() {
+  console.warn("Astra DB is currently disabled.");
+  return null;
+}
+
 // const endpoint = process.env.ASTRA_DB_API_ENDPOINT || "";
 // const token = process.env.ASTRA_DB_APPLICATION_TOKEN || "";
 // const collection = process.env.ASTRA_DB_COLLECTION || "";
