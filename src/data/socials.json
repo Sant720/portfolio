@@ -1,0 +1,19 @@
+{
+  "socials": [
+    {
+      "name": "LinkedIn",
+      "href": "https://linkedin.com/in/santiagobolivar",
+      "icon": "linkedin"
+    },
+    {
+      "name": "GitHub",
+      "href": "https://github.com/Sant720",
+      "icon": "github"
+    },
+    {
+      "name": "Email",
+      "href": "mailto:santiago.bolivar7@gmail.com",
+      "icon": "mail"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "projects": [
+    {
+      "name": "Project 1",
+      "description": "Generate winning combinations, view past results, and analyze lottery trends all in one place",
+      "image": "/placeholder-image.jpg",
+      "tags": [
+        "Python",
+        "FastAPI",
+        "Docker",
+        "Fly.io",
+        "NextJS",
+        "PostgreSQL",
+        "TailwindCSS",
+        "BS4"
+      ],
+      "links": [
+        {
+          "name": "Website",
+          "href": "https://github.com/",
+          "icon": "globe"
+        },
+        {
+          "name": "Source",
+          "href": "https://github.com/",
+          "icon": "github"
+        },
+        {
+          "name": "Source (UI)",
+          "href": "https://github.com/",
+          "icon": "github"
+        }
+      ]
+    },
+    {
+      "name": "Project 2",
+      "description": "Real-time trading alerts with chart snapshots sent to Telegram, designed to keep traders informed and responsive to market changes",
+      "image": "/placeholder-image.jpg",
+      "tags": [
+        "Python",
+        "FastAPI",
+        "Docker",
+        "Fly.io",
+        "Selenium",
+        "Telegram Bot API"
+      ],
+      "links": [
+        {
+          "name": "Source",
+          "href": "https://github.com/",
+          "icon": "github"
+        }
+      ]
+    }
+  ]
+}

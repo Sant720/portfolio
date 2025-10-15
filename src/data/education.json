@@ -1,0 +1,37 @@
+{
+  "education": [
+    {
+      "name": "University of Lima",
+      "href": "https://github.com/",
+      "title": "Degree",
+      "logo": "",
+      "start": "Sep 2019",
+      "end": "Apr 2023",
+      "description": [
+        "Graduated with a Minor in Mathematics",
+        "President of Digipen Student Management Committee for freshman year",
+        "3-time recipient of the Dean's Honor List"
+      ],
+      "links": [
+        {
+          "name": "button 1",
+          "href": "https://github.com/",
+          "icon": "globe"
+        },
+        {
+          "name": "button 2",
+          "href": "https://github.com/",
+          "icon": "globe"
+        }
+      ]
+    },
+    {
+      "name": "University of Lima",
+      "href": "https://github.com/",
+      "title": "Licentiate",
+      "logo": "",
+      "start": "Apr 2014",
+      "end": "May 2017"
+    }
+  ]
+}
