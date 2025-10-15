@@ -29,6 +29,25 @@
           "icon": "globe"
         }
       ]
+    },
+    {
+      "name": "BairesDev",
+      "href": "https://www.bairesdev.com/",
+      "title": "Marketing & Communications Assistant",
+      "logo": "/bairesdev-logo.svg",
+      "start": "Feb 2025",
+      "end": "Sep 2025",
+      "description": [
+        "Collaborated with engineering teams to translate technical concepts into B2B marketing collateral, case studies, and web copy.", 
+        "Led the SEO Optimization of 50+ business-critical landing pages, placing ~80% of them on the first page of Google."
+      ],
+      "links": [
+        {
+          "name": "Button/tag",
+          "href": "https://github.com/",
+          "icon": "globe"
+        }
+      ]
     }
   ]
 }
