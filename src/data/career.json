@@ -2,7 +2,7 @@
   "career": [
     {
       "name": "Uber",
-      "href": "https://github.com/",
+      "href": "https://www.uber.com/",
       "title": "Senior Technical Writer",
       "logo": "/uber-logo-square.jpg",
       "start": "May 2021",
@@ -13,15 +13,14 @@
       ]
     },
     {
-      "name": "Company",
-      "href": "https://github.com/",
-      "title": "Job title",
-      "logo": "/sit.png",
-      "start": "Apr 2023",
-      "end": "Jun 2023",
+      "name": "Pro Se Pro",
+      "href": "https://www.prosepro.co/",
+      "title": "Technical Marketing Writer",
+      "logo": "/pro-se-pro-logo-v2.png",
+      "start": "Feb 2025",
+      "end": "Sep 2025",
       "description": [
-        "Built NFTVue, a NFT gallery website that allows students to connect their crypto wallets to view and verify their school event-issued NFTs",
-        "Worked on DemoConstruct, a full-stack web application (React + Python) that uses Meshroom to reconstruct 3D models from captured images"
+        "Produce technical and educational content on U.S. immigration law, ensuring complex legal concepts and processes are accessible to several segmented audiences."      
       ],
       "links": [
         {
