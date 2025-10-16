@@ -3,7 +3,7 @@
     {
       "name": "Optimize knowledge articles for internal AI search engines",
       "description": "Created an agentic workflow to automatically analyze, score, and optimize knowledge content for AI-readiness across Uber’s knowledge systems.",
-      "image": "/placeholder-image.jpg",
+      "image": "/agentic-flow-hero.png",
       "tags": [
         "Uber Agent Builder",
         "ChatGPT",
@@ -23,7 +23,7 @@
     {
       "name": "Launch and structure new GenAI knowledge hub",
       "description": "Designed and implemented a centralized knowledge hub to educate employees on generative AI tools, best practices, and policies.",
-      "image": "/placeholder-image.jpg",
+      "image": "/genai-knowledge-hub-hero.png",
       "tags": [
         "Gemini",
         "ChatGPT",
@@ -32,7 +32,8 @@
         "Adobe Firefly",
         "GenAI Policy",
         "Zoom AI Companion", 
-        "Slack AI"
+        "Slack AI", 
+        "Uber"
       ],
       "links": [
         {
