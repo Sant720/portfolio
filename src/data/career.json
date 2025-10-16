@@ -85,6 +85,24 @@
           "icon": "globe"
         }
       ]
+    },
+    {
+      "name": "Tekton Labs",
+      "href": "https://www.tektonlabs.com/",
+      "title": "Content Associate",
+      "logo": "/tekton-labs-logo-2.svg",
+      "start": "Nov 2016",
+      "end": "Nov 2017",
+      "description": [
+        "Assisted in the weekly production of blog posts, videos, and other pieces of content for the company’s website and social media."
+      ],
+      "links": [
+        {
+          "name": "Button/tag",
+          "href": "https://github.com/",
+          "icon": "globe"
+        }
+      ]
     }
   ]
 }
