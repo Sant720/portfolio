@@ -23,7 +23,7 @@ export function ProjectCard({ project }: Props) {
     <Card className="flex flex-col">
       <CardHeader>
         {image && (
-          <Link href={href || image}>
+          <Link href={links?.[0]?.href || "#"}>
             <Image
               src={image}
               alt={name}
