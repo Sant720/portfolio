@@ -35,7 +35,10 @@ const project = z.object({
   description: z.string(),
   href: z.string().url().optional(),
   image: z.string().optional(),
-  tags: z.array(z.string()),
+  tags: z.object({
+    primary: z.array(z.string()),
+    secondary: z.array(z.string())
+  }),
   links: z.array(iconLink),
 });
 export const projectSchema = z.object({ projects: z.array(project) });

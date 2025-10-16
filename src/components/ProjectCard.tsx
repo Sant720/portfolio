@@ -11,6 +11,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Markdown from "react-markdown";
 import Icon from "./Icon";
+import { Button } from "@/components/ui/Button";
 
 interface Props {
   project: Project;
@@ -35,18 +36,27 @@ export function ProjectCard({ project }: Props) {
         )}
       </CardHeader>
       <CardContent className="flex flex-col gap-2">
-        <CardTitle>{name}</CardTitle>
-        <Markdown className="prose max-w-full text-pretty font-sans text-xs text-muted-foreground dark:prose-invert">
+        <CardTitle className="text-lg font-semibold leading-tight">{name}</CardTitle>
+        <Markdown className="prose max-w-full text-pretty font-sans text-sm text-muted-foreground dark:prose-invert">
           {description}
         </Markdown>
       </CardContent>
       <CardFooter className="flex h-full flex-col items-start justify-between gap-4">
-        {tags && tags.length > 0 && (
-          <div className="mt-2 flex flex-wrap gap-1">
-            {tags.toSorted().map((tag) => (
+        {tags && (tags.primary.length > 0 || tags.secondary.length > 0) && (
+          <div className="my-1 flex flex-wrap gap-1">
+            {tags.primary.map((tag) => (
               <Badge
-                key={tag}
-                className="px-1 py-0 text-[10px]"
+                key={`primary-${tag}`}
+                className="px-1.5 py-1 text-[11px] select-none"
+                variant="default"
+              >
+                {tag}
+              </Badge>
+            ))}
+            {tags.secondary.map((tag) => (
+              <Badge
+                key={`secondary-${tag}`}
+                className="px-1.5 py-1 text-[11px] select-none"
                 variant="secondary"
               >
                 {tag}
@@ -55,14 +65,20 @@ export function ProjectCard({ project }: Props) {
           </div>
         )}
         {links && links.length > 0 && (
-          <div className="flex flex-row flex-wrap items-start gap-1">
+          <div className="flex flex-col gap-2 w-full">
             {links.toSorted().map((link, idx) => (
-              <Link href={link?.href} key={idx} target="_blank">
-                <Badge key={idx} className="flex gap-2 px-2 py-1 text-[10px]">
-                  <Icon name={link.icon} className="size-3" />
+              <Button
+                asChild
+                key={idx}
+                variant="default"
+                size="default"
+                className="w-full"
+              >
+                <a href={link.href} target="_blank" rel="noopener noreferrer">
+                  <Icon name={link.icon} className="size-4" />
                   {link.name}
-                </Badge>
-              </Link>
+                </a>
+              </Button>
             ))}
           </div>
         )}

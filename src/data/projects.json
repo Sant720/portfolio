@@ -4,14 +4,10 @@
       "name": "Optimize knowledge articles for internal AI search engines",
       "description": "Created an agentic workflow to automatically analyze, score, and optimize knowledge content for AI-readiness across Uber’s knowledge systems.",
       "image": "/agentic-flow-hero.png",
-      "tags": [
-        "Uber Agent Builder",
-        "ChatGPT",
-        "ServiceNow",
-        "HTML",
-        "Jira", 
-        "Agentic Workflow"
-      ],
+      "tags": {
+  "primary": ["Uber", "Agentic Workflow"],
+  "secondary": ["ServiceNow", "ChatGPT", "HTML", "SEO", "AI"]
+},
       "links": [
         {
           "name": "Read the blog post",
@@ -24,16 +20,10 @@
       "name": "Launch and structure new GenAI knowledge hub",
       "description": "Designed and implemented a centralized knowledge hub to educate employees on generative AI tools, best practices, and policies.",
       "image": "/genai-knowledge-hub-hero.png",
-      "tags": [
-        "Gemini",
-        "ChatGPT",
-        "Glean",
-        "GenAI Policy",
-        "Uber",
-        "ServiceNow", 
-        "Confluence", 
-        "Knowledge Base"
-      ],
+      "tags": {
+  "primary": ["Uber", "GenAI Policy", "Knowledge Base"],
+  "secondary": ["Gemini", "ChatGPT", "ServiceNow", "Confluence", "Glean"]
+},
       "links": [
         {
           "name": "Read the blog post",
