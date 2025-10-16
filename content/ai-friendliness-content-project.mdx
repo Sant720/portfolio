@@ -1,0 +1,149 @@
+---
+title: "Agentic Workflow for AI-Friendliness Scoring and Optimization"
+description: "Developed and piloted an agentic workflow that automatically analyzes, scores, and optimizes internal knowledge content for AI-readiness across Uber’s enterprise knowledge systems."
+date: "2025-05-15"
+category: "Knowledge Management"
+tags:
+  - AI
+  - Workflow Automation
+  - Knowledge Management
+  - Technical Writing
+  - Uber
+thumbnail: "/images/projects/ai-friendliness-workflow-thumb.png"
+status: "Pilot Phase"
+impact: "Improved AI-friendliness of 100+ Uber knowledge articles from 52% to 95%+"
+---
+
+import Image from "next/image";
+
+# 🧠 Agentic Workflow for AI-Friendliness Scoring and Optimization
+
+**Summary:**  
+Developed and piloted an agentic workflow that automatically analyzes, scores, and optimizes internal knowledge content for AI-readiness across Uber’s enterprise knowledge systems.
+
+---
+
+## Overview
+
+As part of Uber’s **Enterprise Applications Knowledge Management** team, I led the design and implementation of an **agentic workflow** to measure and improve the **AI-friendliness** of internal content.  
+
+The project aimed to make enterprise knowledge more accessible and actionable for internal generative AI systems—especially **Slack-based assistants and knowledge retrieval models**—by ensuring that content is structured, clear, and machine-interpretable.
+
+---
+
+## Problem
+
+Uber was piloting a **Slack AI Assistant** that helped employees find information across internal systems like UberHub, Drive, and ServiceNow.  
+However, we observed that the bot often **retrieved incomplete or irrelevant results** because much of the existing documentation wasn’t written in an **AI-friendly format**.  
+
+Inconsistent structure, unclear metadata, and uneven tone made it difficult for LLM-based tools to extract context and generate accurate responses.  
+Our challenge was to **quantify AI-friendliness** and then create a way to **systematically improve it** at scale.
+
+---
+
+## Goal
+
+Create a **scalable, repeatable workflow** that could:
+
+1. **Analyze** internal content against a formalized set of *AI-friendliness parameters* — clarity, structure, metadata, promptability, semantic density, etc.  
+2. **Score** content based on weighted metrics defined in the **AI-Friendliness Guideline Document**.  
+3. **Provide recommendations** for improvement and help content owners revise their pages.  
+4. **Ensure repeatability** — re-running the same content should always yield the same score.
+
+---
+
+## Solution
+
+I proposed and developed an **agentic workflow** composed of multiple specialized AI agents that:
+
+- **Extract** content from UberHub using internal APIs.  
+- **Evaluate** each article against weighted guideline parameters.  
+- **Generate deterministic scores and qualitative feedback.**  
+- **Output improvement recommendations**, such as restructuring sections, clarifying metadata, and improving headings or summaries.
+
+> **Key differentiator:**  
+> The workflow produces **repeatable, deterministic scores**, ensuring consistency and traceability across content updates.
+
+---
+
+## Implementation
+
+- **Pilot scope:** 100+ GenAI-related UberHub articles.  
+- **Guideline creation:** Authored Uber’s first **AI-Friendliness Guideline Document**, defining measurable standards and weights.  
+- **Workflow architecture:** Designed a multi-agent pipeline for content ingestion, analysis, and scoring.  
+- **Validation:** Partnered with content owners to test scoring accuracy and refine recommendations.  
+- **Reporting:** Built dashboards to visualize content improvements over time.
+
+---
+
+<Image
+  src="/images/projects/ai-friendliness-workflow-diagram.png"
+  alt="Diagram showing AI-friendliness agentic workflow stages"
+  width={960}
+  height={520}
+/>
+
+---
+
+## Impact
+
+| Metric | Before | After | Change |
+|:--------|:--------|:--------|:--------|
+| **Average AI-Friendliness Score** | 52% | **95%+** | ▲ +43% |
+| **Articles Processed** | — | 100+ | — |
+| **Teams Impacted** | 1 (KM Pilot) | Expanding to HR, Legal, Payments | — |
+
+This initiative directly improved the performance of internal AI assistants like **Slack AI Assistant** and **uSearch**, increasing both precision and confidence in AI-generated responses.
+
+---
+
+## Next Steps
+
+We are expanding the workflow to other Uber knowledge domains:
+
+- Automating ingestion of updated articles.  
+- Extending scoring to **ServiceNow** and **Drive** repositories.  
+- Embedding real-time AI-friendliness feedback within authoring tools.  
+- Partnering with **HR, Legal, and Payments** KM teams to adopt the workflow in their documentation lifecycle.
+
+---
+
+## My Role
+
+- Proposed and led the project based on observed retrieval challenges.  
+- Authored the **AI-Friendliness Guideline Document**.  
+- Designed the multi-agent architecture and scoring logic.  
+- Managed pilot execution and stakeholder collaboration.  
+- Reported key metrics and improvement results.
+
+---
+
+## Tools & Technologies
+
+- **UberHub Internal API** (content extraction)  
+- **GenAI Agent Framework** ([insert tool name])  
+- **Slack AI Assistant integration**  
+- **Python** for orchestration & data handling  
+- **[insert BI tool / dashboard framework]** for reporting and visualization
+
+---
+
+## Key Learnings
+
+This project demonstrated how **technical writing, AI literacy, and workflow automation** converge to improve enterprise knowledge quality.  
+
+By treating documentation as a **data product**, we enabled scalable, measurable, and repeatable improvement — setting a foundation for AI-driven documentation quality frameworks across Uber.
+
+---
+
+## Future Enhancements / References
+
+- [Insert diagram of the workflow stages]  
+- [Insert list of AI-friendliness parameters and their weights]  
+- [Insert sample before/after article comparison]  
+- [Insert quote or testimonial from stakeholders]  
+- [Insert link to AI-Friendliness Guideline Document (if public)]  
+
+---
+
+*© 2025 Santiago Bolivar. All rights reserved.*
