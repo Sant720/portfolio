@@ -1,12 +1,11 @@
 {
   "projects": [
     {
-      "name": "Optimizing knowledge articles for internal AI search engines",
+      "name": "Optimize knowledge articles for internal AI search engines",
       "description": "Created an agentic workflow to automatically analyze, score, and optimize knowledge content for AI-readiness across Uber’s knowledge systems.",
       "image": "/placeholder-image.jpg",
       "tags": [
-        "Uber",
-        "Internal tool",
+        "Uber Agent Builder",
         "ChatGPT",
         "ServiceNow",
         "HTML",
@@ -22,22 +21,24 @@
       ]
     },
     {
-      "name": "Project 2",
-      "description": "Real-time trading alerts with chart snapshots sent to Telegram, designed to keep traders informed and responsive to market changes",
+      "name": "Launch and structure new GenAI knowledge hub",
+      "description": "Designed and implemented a centralized knowledge hub to educate employees on generative AI tools, best practices, and policies.",
       "image": "/placeholder-image.jpg",
       "tags": [
-        "Python",
-        "FastAPI",
-        "Docker",
-        "Fly.io",
-        "Selenium",
-        "Telegram Bot API"
+        "Gemini",
+        "ChatGPT",
+        "Writer",
+        "Glean",
+        "Adobe Firefly",
+        "GenAI Policy",
+        "Zoom AI Companion", 
+        "Slack AI"
       ],
       "links": [
         {
-          "name": "Source",
-          "href": "https://github.com/",
-          "icon": "github"
+          "name": "Read the blog post",
+          "href": "https://santiagobolivar.dev/blog/new-genai-knowledge-hub",
+          "icon": "book-text"
         }
       ]
     }
