@@ -43,18 +43,6 @@ export default async function Home() {
             <li>Native-level English and exceptional collaboration skills.</li>
           </ul>
 
-          {/* <div className="mt-6 flex items-center gap-1">
-            <p className="text-balance text-sm font-semibold sm:text-base">
-              For Q&A, raise a ticket with the AI ChatBot
-            </p>
-            <ArrowDownRight className="hidden size-5 animate-bounce sm:block" />
-            <ArrowDown className="block size-5 animate-bounce sm:hidden" />
-          </div> */}
-
-          {/* <p className="mt-1 text-xs font-light">
-            Small text.
-          </p> */}
-
           <section className="mt-6 flex flex-wrap items-center gap-4">
             <Link href="/Santiago Bolivar Resume.pdf" target="_blank">
               <Button variant="outline">

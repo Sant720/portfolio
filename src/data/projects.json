@@ -10,12 +10,12 @@
         "ServiceNow",
         "HTML",
         "Jira", 
-        "Agentic workflow"
+        "Agentic Workflow"
       ],
       "links": [
         {
           "name": "Read the blog post",
-          "href": "https://santiagobolivar.dev/blog/ai-friendliness-content-project",
+          "href": "/blog/ai-friendliness-content-project",
           "icon": "book-text"
         }
       ]
@@ -27,18 +27,17 @@
       "tags": [
         "Gemini",
         "ChatGPT",
-        "Writer",
         "Glean",
-        "Adobe Firefly",
         "GenAI Policy",
-        "Zoom AI Companion", 
-        "Slack AI", 
-        "Uber"
+        "Uber",
+        "ServiceNow", 
+        "Confluence", 
+        "Knowledge Base"
       ],
       "links": [
         {
           "name": "Read the blog post",
-          "href": "https://santiagobolivar.dev/blog/new-genai-knowledge-hub",
+          "href": "/blog/new-genai-knowledge-hub",
           "icon": "book-text"
         }
       ]
