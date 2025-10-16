@@ -14,7 +14,7 @@
       "links": [
         {
           "name": "View projects",
-          "href": "https://santiagobolivar.dev/#featured-projects",
+          "href": "/#featured-projects",
           "icon": "folder"
         }
       ]
@@ -33,7 +33,7 @@
         {
           "name": "View writing samples",
           "href": "https://santiagobolivar.dev/#",
-          "icon": "globe"
+          "icon": "sticky-note"
         }
       ]
     },
@@ -47,13 +47,6 @@
       "description": [
         "Collaborated with engineering teams to translate technical concepts into B2B marketing collateral, case studies, and web copy.", 
         "Led the SEO Optimization of 50+ business-critical landing pages, placing ~80% of them on the first page of Google."
-      ],
-      "links": [
-        {
-          "name": "Button/tag",
-          "href": "https://github.com/",
-          "icon": "globe"
-        }
       ]
     },
     {
@@ -66,13 +59,6 @@
       "description": [
         "Maintain and optimize the company's WordPress website to support consistent messaging, improve SEO, and enhance UX.", 
         "Write blog posts and landing pages that translated complex legal case details into clear, accessible content for general audiences."
-      ],
-      "links": [
-        {
-          "name": "Button/tag",
-          "href": "https://github.com/",
-          "icon": "globe"
-        }
       ]
     },
     {
@@ -84,13 +70,6 @@
       "end": "Apr 2018",
       "description": [
         "Deliver exceptional guest experiences by managing reservations, seating logistics, and personalized service for high-profile clientele, maintaining 5-star guest satisfaction scores."
-      ],
-      "links": [
-        {
-          "name": "Button/tag",
-          "href": "https://github.com/",
-          "icon": "globe"
-        }
       ]
     },
     {
@@ -102,13 +81,6 @@
       "end": "Dec 2017",
       "description": [
         "Assisted in the weekly production of blog posts, videos, and other pieces of content for the company’s website and social media."
-      ],
-      "links": [
-        {
-          "name": "Button/tag",
-          "href": "https://github.com/",
-          "icon": "globe"
-        }
       ]
     }
   ]

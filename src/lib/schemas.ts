@@ -15,7 +15,17 @@ export const ContactFormSchema = z.object({
 
 const iconLink = z.object({
   name: z.string(),
-  href: z.string().url(),
+  href: z.string().refine(
+    (val) =>
+      val.startsWith("http://") ||
+      val.startsWith("https://") ||
+      val.startsWith("/") ||
+      val.startsWith("#") ||
+      val.startsWith("mailto:"),
+    {
+      message: "Invalid link: must be a valid URL, relative path, or mailto link",
+    }
+  ),
   icon: z.custom<keyof typeof dynamicIconImports>(),
 });
 export type IconLink = z.infer<typeof iconLink>;
