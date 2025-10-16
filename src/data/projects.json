@@ -1,34 +1,23 @@
 {
   "projects": [
     {
-      "name": "Project 1",
-      "description": "Generate winning combinations, view past results, and analyze lottery trends all in one place",
+      "name": "Optimizing knowledge articles for internal AI search engines",
+      "description": "Created an agentic workflow to automatically analyze, score, and optimize knowledge content for AI-readiness across Uber’s knowledge systems.",
       "image": "/placeholder-image.jpg",
       "tags": [
-        "Python",
-        "FastAPI",
-        "Docker",
-        "Fly.io",
-        "NextJS",
-        "PostgreSQL",
-        "TailwindCSS",
-        "BS4"
+        "Uber",
+        "Internal tool",
+        "ChatGPT",
+        "ServiceNow",
+        "HTML",
+        "Jira", 
+        "Agentic workflow"
       ],
       "links": [
         {
-          "name": "Case Study",
+          "name": "Read the blog post",
           "href": "https://santiagobolivar.dev/blog/ai-friendliness-content-project",
-          "icon": "globe"
-        },
-        {
-          "name": "Source",
-          "href": "https://github.com/",
-          "icon": "github"
-        },
-        {
-          "name": "Source (UI)",
-          "href": "https://github.com/",
-          "icon": "github"
+          "icon": "book-text"
         }
       ]
     },
