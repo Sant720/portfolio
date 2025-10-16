@@ -2,15 +2,14 @@
   "education": [
     {
       "name": "University of Lima",
-      "href": "https://github.com/",
-      "title": "Degree",
-      "logo": "",
+      "href": "https://www.ulima.edu.pe/",
+      "title": "Bachelor’s Degree in Communications",
+      "logo": "/university-of-lima-logo.svg",
       "start": "Sep 2019",
       "end": "Apr 2023",
       "description": [
-        "Graduated with a Minor in Mathematics",
-        "President of Digipen Student Management Committee for freshman year",
-        "3-time recipient of the Dean's Honor List"
+        "GPA: 16.8/20 (3.8 U.S. GPA equivalent).",
+        "Winner of the 'Best Marketing & Advertising Campaign 2019' award."
       ],
       "links": [
         {
@@ -27,11 +26,11 @@
     },
     {
       "name": "University of Lima",
-      "href": "https://github.com/",
-      "title": "Licentiate",
-      "logo": "",
-      "start": "Apr 2014",
-      "end": "May 2017"
+      "href": "https://www.ulima.edu.pe/",
+      "title": "Licentiate Degree in Communications",
+      "logo": "/university-of-lima-logo.svg",
+      "start": "Sep 2019",
+      "end": "Apr 2020"
     }
   ]
 }
