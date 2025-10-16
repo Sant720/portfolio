@@ -10,6 +10,13 @@
         "Own and maintain internal documentation for third-party GenAI tools (e.g., ChatGPT, Gemini, Glean, Zoom AI), ensuring clarity, consistency, and alignment with enterprise policies and security constraints.",
         "Collaborate with App Owners to create and maintain user-facing and service desk documentation for Enterprise Apps (e.g. Google Workspace, Slack, Figma) ensuring accuracy and usability across internal audiences.",
         "Monitor and respond to user feedback from ServiceNow and Slack, updating documentation based on common questions and usage gaps to improve clarity and user satisfaction."
+      ],
+      "links": [
+        {
+          "name": "View projects",
+          "href": "https://santiagobolivar.dev/#featured-projects",
+          "icon": "folder"
+        }
       ]
     },
     {
