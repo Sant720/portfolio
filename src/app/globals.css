@@ -103,12 +103,15 @@
     @apply ml-1 mt-2 text-sm text-rose-400;
   }
 
-  /* remove decorative quotation marks added by the typography plugin,
-       but keep the visual left bar (border) */
-  /* .prose blockquote::before,
-  .prose blockquote::after, */
+  /* remove decorative quotation marks added by the typography plugin */
   .prose blockquote p::before,
   .prose blockquote p::after {
     content: none;
   }
 }
+
+/* remove default italic styling for blockquotes */
+  .prose blockquote,
+  .prose blockquote p {
+    font-style: normal;
+  }
