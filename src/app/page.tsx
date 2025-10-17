@@ -39,7 +39,7 @@ export default async function Home() {
 
           <ul className="mt-4 max-w-sm text-xs sm:text-sm list-disc pl-3 space-y-1">
             <li><strong>Currently working at Uber</strong> on GenAI & SaaS knowledge management.</li>
-            <li>5+ years of experience working with <strong>U.S.-based engineering teams</strong>.</li>
+            <li>4+ years of experience working with <strong>U.S.-based engineering teams</strong>.</li>
             <li>Native-level English and exceptional collaboration skills.</li>
           </ul>
 
