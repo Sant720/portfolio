@@ -1,34 +1,30 @@
 ---
-title: "Agentic Workflow for AI-Friendliness Scoring and Optimization"
+title: "Optimize knowledge articles for internal AI search engines"
 summary: "Developed and piloted an agentic workflow that automatically analyzes, scores, and optimizes internal knowledge content for AI-readiness across Uber’s enterprise knowledge systems."
 image: "/placeholder-image.jpg"
 publishedAt: "2025-09-27"
 tags: ["Next.js", "Shadcn-UI", "AI Chatbot", "Email", "YouTube"]
 ---
 
-# Agentic Workflow for AI-Friendliness Scoring and Optimization
-
-**Summary:**  
-Developed and piloted an agentic workflow automatically analyze, score, and optimize knowledge content for AI-readiness across Uber’s knowledge systems.
-
 ---
 
 ## Overview
 
-As part of Uber’s **Enterprise Applications Knowledge Management** team, I led the design and implementation of an **agentic workflow** to measure and improve the **AI-readiness** of internal content.  
+As part of Uber’s **Enterprise Applications Knowledge Management** team, I led the design and implementation of an **agentic workflow** to measure and improve the **AI-readiness of internal content**.  
 
-The project aimed to make enterprise knowledge more accessible and actionable for internal generative AI systems—especially **Slack-based assistants and knowledge retrieval models**—by ensuring that content is structured, clear, and machine-interpretable.
+The project aimed to **make enterprise knowledge more accessible and actionable for internal AI search engines**—particularly Slack-based AI assistants and AI knowledge retrieval models—by ensuring that content is **consistently structured for machine interpretation**.
 
 ---
 
 ## Problem
 
-Uber was piloting a **Slack AI Assistant** that helped employees find information across internal systems like UberHub, Google Drive, Confluence, and ServiceNow.  
+Uber was piloting several **AI Assistants** that helped employees **find information across internal systems** like UberHub, Google Drive, Confluence, and ServiceNow.  
 
-We observed that the bot often **retrieved incomplete or irrelevant results** because much of the existing documentation wasn’t written in an **AI-friendly format**.  
+Our team observed that these AI Assistants often **returned incomplete, innaccurate, or irrelevant results**, causing user confusion. 
 
-Inconsistent structure, unclear metadata, and uneven tone made it difficult for LLM-based tools to extract context and generate accurate responses.  
-Our challenge was to **quantify AI-friendliness** and then create a way to **systematically improve it** at scale.
+One of the identified causes stemmed from content issues: due to variance across internal platforms, many knowledge resources had **inconsistent structure, unclear metadata, information chunking**, and other defects that made it difficult for LLM-based tools to extract context appropriately and generate accurate responses.  
+
+Our challenge was to **quantify AI SEO friendliness** and then create a way to **systematically improve it** at scale.
 
 ---
 
@@ -36,18 +32,18 @@ Our challenge was to **quantify AI-friendliness** and then create a way to **sys
 
 Create a **scalable, repeatable workflow** that could:
 
-1. **Analyze** internal content against a formalized set of *AI-friendliness parameters* — clarity, structure, metadata, promptability, semantic density, etc.  
-2. **Score** content based on weighted metrics defined in the **AI-Friendliness Guideline Document**.  
+1. **Analyze** internal content against a formalized set of *AI SEO parameters* — structure, metadata, chunking, promptability, semantic density, etc.  
+2. **Score** content based on weighted metrics defined in a new **AI SEO Guidelines**.  
 3. **Provide recommendations** for improvement and help content owners revise their pages.  
-4. **Ensure repeatability** — re-running the same content should always yield the same score.
+4. **Ensure repeatability** so that re-running the same content should always yield the same score.
 
 ---
 
 ## Solution
 
-I proposed and developed an **agentic workflow** composed of multiple specialized AI agents that:
+I proposed and developed an **agentic workflow** utilizing **Uber's internal AI tools**. The workflow called multiple specialized AI agents that would:
 
-- **Extract** content from UberHub using internal APIs.  
+- **Extract** content from various platforms.  
 - **Evaluate** each article against weighted guideline parameters.  
 - **Generate deterministic scores and qualitative feedback.**  
 - **Output improvement recommendations**, such as restructuring sections, clarifying metadata, and improving headings or summaries.
@@ -59,8 +55,8 @@ I proposed and developed an **agentic workflow** composed of multiple specialize
 
 ## Implementation
 
-- **Pilot scope:** 100+ GenAI-related UberHub articles.  
-- **Guideline creation:** Authored Uber’s first **AI-Friendliness Guideline Document**, defining measurable standards and weights.  
+- **Pilot scope:** 80+ GenAI-related UberHub articles.  
+- **Guideline creation:** Contributed to the authoring of Uber’s first **AI SEO Guideline Document**, defining measurable standards and weights.  
 - **Workflow architecture:** Designed a multi-agent pipeline for content ingestion, analysis, and scoring.  
 - **Validation:** Partnered with content owners to test scoring accuracy and refine recommendations.  
 - **Reporting:** Built dashboards to visualize content improvements over time.
