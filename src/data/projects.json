@@ -26,9 +26,9 @@
 },
       "links": [
         {
-          "name": "Read the blog post",
+          "name": "Blogpost in progress",
           "href": "/blog/new-genai-knowledge-hub",
-          "icon": "book-text"
+          "icon": "loader"
         }
       ]
     }
