@@ -28,6 +28,7 @@ type Inputs = z.infer<typeof ContactFormSchema>;
 export default function ContactForm() {
   const [showConfirmDialog, setShowConfirmDialog] = useState(false);
   const [formData, setFormData] = useState<Inputs | null>(null);
+  const [sending, setSending] = useState(false);
 
   const {
     register,
@@ -62,16 +63,28 @@ export default function ContactForm() {
     if (!formData) return;
 
     setShowConfirmDialog(false);
-    const result = await sendEmail(formData);
+    setSending(true);
+    try {
+      console.info("Sending contact form", formData);
+      const result = await sendEmail(formData);
 
-    if (result.error) {
-      toast.error("An error occurred! Please try again later.");
-      return;
+      // If sendEmail returns a response shape, handle it. Adjust if different.
+      // Accept responses like { success: boolean } or { success: boolean, error: string }
+      if (!result || result.error || result.success === false) {
+        console.error("sendEmail returned error:", result);
+        toast.error("An error occurred! Please try again later.");
+        return;
+      }
+
+      toast.success("Message sent successfully!");
+      reset();
+      setFormData(null);
+    } catch (err) {
+      console.error("sendEmail threw:", err);
+      toast.error("An unexpected error occurred. Please try again later.");
+    } finally {
+      setSending(false);
     }
-
-    toast.success("Message sent successfully!");
-    reset();
-    setFormData(null);
   };
 
   return (
@@ -136,7 +149,7 @@ export default function ContactForm() {
         <div className="mt-2">
           <Button
             type="submit"
-            disabled={isSubmitting}
+            disabled={isSubmitting || sending}
             className="w-full disabled:opacity-50"
           >
             <div className="flex items-center">
@@ -173,7 +186,7 @@ export default function ContactForm() {
           <AlertDialogFooter>
             <AlertDialogCancel>Let me fix that</AlertDialogCancel>
             <AlertDialogAction onClick={processForm} disabled={isSubmitting}>
-              {isSubmitting ? (
+              {sending ? (
                 <>
                   <span>Sending...</span>
                   <ReloadIcon className="ml-2 h-4 w-4 animate-spin" />
