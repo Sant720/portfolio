@@ -102,4 +102,13 @@
   .input-error {
     @apply ml-1 mt-2 text-sm text-rose-400;
   }
+
+  /* remove decorative quotation marks added by the typography plugin,
+       but keep the visual left bar (border) */
+  /* .prose blockquote::before,
+  .prose blockquote::after, */
+  .prose blockquote p::before,
+  .prose blockquote p::after {
+    content: none;
+  }
 }
