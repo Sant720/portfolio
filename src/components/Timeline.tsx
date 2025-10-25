@@ -10,7 +10,7 @@ interface Props {
   experience: Experience[];
 }
 
-const INITIAL_COUNT = 4;
+const INITIAL_COUNT = 3;
 
 export default function Timeline({ experience }: Props) {
   const [showAll, setShowAll] = useState(false);
