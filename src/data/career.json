@@ -6,21 +6,13 @@
       "title": "Senior Technical Writer",
       "logo": "/uber-logo-square.jpg",
       "start": "May 2021",
+      "end": "Present",
       "description": [
-        "Own and maintain internal documentation for third-party GenAI tools (e.g., ChatGPT, Gemini, Glean, Zoom AI), ensuring clarity, consistency, and alignment with enterprise policies and security constraints.",
-        "Collaborate with Engineers and App Owners to create and maintain employee-facing documentation for Enterprise Apps (e.g. Google Workspace, Slack, Figma) ensuring accuracy and usability across internal audiences.",
-        "Monitor and respond to user feedback from ServiceNow and Slack, updating documentation based on common questions and usage gaps to improve clarity and user satisfaction."
-      ]
-    },
-    {
-      "name": "Pro Se Pro",
-      "href": "https://www.prosepro.co/",
-      "title": "Technical Marketing Writer",
-      "logo": "/pro-se-pro-logo-v2.png",
-      "start": "Feb 2025",
-      "end": "Sep 2025",
-      "description": [
-        "Produce technical and educational content on U.S. immigration law, ensuring complex legal concepts and processes are accessible to several segmented audiences."      
+        "Lead day-to-day operations of the IT Knowledge Management team, overseeing 500+ knowledge resources for SaaS, Cloud, and Enterprise applications in partnership with Engineers, App Owners, and Program Managers—maintaining an average article rating of 4.72/5 by prioritizing documentation accuracy, relevance, and governance.",
+        "Launch Uber’s internal GenAI Knowledge Hub across ServiceNow and Confluence, creating 80+ documentation resources for tools like ChatGPT, Gemini, Glean, and Zoom AI, driving 120K+ page visits across Uber’s internal platforms.",
+        "Design, structure, and build 12+ internal documentation microsites in support of business-critical workflows from separate departments (Contract Management, Payments, Global Security, Legal), ensuring alignment with Uber's documentation guidelines, enterprise data security, and compliance policies.",
+        "Develop and pilot an agentic workflow that analyzed and scored 70+ knowledge articles for AI-readiness, improving user satisfaction with internal AI assistants by 30%; this initiative is now being adopted by other knowledge teams at Uber.",
+        "Architect the content hierarchy and taxonomy tree of Uber's new central wiki by reviewing, retiring and migrating 800+ resources from dispersed legacy repositories."
       ]
     },
     {
@@ -28,29 +20,30 @@
       "href": "https://www.bairesdev.com/",
       "title": "Marketing & Communications Assistant",
       "logo": "/bairesdev-logo.svg",
-      "start": "Aug 2019",
-      "end": "Jun 2021",
+      "start": "May 2019",
+      "end": "May 2021",
       "description": [
-        "Collaborate with engineering teams to translate technical concepts into B2B marketing collateral, case studies, and web copy.", 
-        "Lead the SEO Optimization of 50+ business-critical landing pages, placing ~80% of them on the first page of Google."
+        "Lead SEO optimization for 50+ services landing pages, achieving ~80% first-page Google rankings through improved metadata and structure, keyword optimization, and refining copy to match user intent—rather than marketing buzzwords.",
+        "Scale blog content production by 4× (from 8 to 32 articles per month) by designing and executing a content strategy centered on SEO growth of service landing pages, managing external writers, and reviewing strategic alignment of all deliverables.",
+        "Ghostwrite and edit thought leadership content for C-level executives across Forbes Tech Council, LinkedIn, and the company blog, elevating brand voice and increasing follower engagement in their personal profiles by 2.5× on average."
       ]
     },
     {
       "name": "Almerco",
       "href": "https://almerco.pe/",
-      "title": "Marketing Associate ",
+      "title": "Marketing Associate",
       "logo": "/almerco-logo.png",
       "start": "Dec 2018",
-      "end": "Aug 2019",
+      "end": "May 2019",
       "description": [
-        "Maintain and optimize the company's WordPress website to support consistent messaging, improve SEO, and enhance UX.", 
-        "Write blog posts and landing pages that translated complex legal case details into clear, accessible content for general audiences."
+        "Redesign and manage the firm’s WordPress website, improving UX/UI, responsiveness, and content structure by implementing plugins, rewriting copy, and defining page hierarchies—establishing the company’s new digital presence.",
+        "Develop 20+ presentation decks and infographics for client meetings, transforming legal data into accessible visuals that elevated communication and professionalism."
       ]
     },
     {
       "name": "Waldorf Astoria Park City",
       "href": "https://www.hilton.com/en/hotels/slcdmwa-waldorf-astoria-park-city/",
-      "title": "Host/Guest Services",
+      "title": "Host / Guest Services",
       "logo": "/waldorf-astoria-logo.svg",
       "start": "Dec 2017",
       "end": "Apr 2018",
@@ -61,7 +54,7 @@
     {
       "name": "Tekton Labs",
       "href": "https://www.tektonlabs.com/",
-      "title": "Content Internship",
+      "title": "Content Intern",
       "logo": "/tekton-labs-logo-2.svg",
       "start": "Nov 2016",
       "end": "Nov 2017",
