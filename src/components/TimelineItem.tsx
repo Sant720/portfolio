@@ -32,7 +32,7 @@ export default function TimelineItem({ experience }: Props) {
 
       {/* Career item heading */}
       <div className="col-span-1 row-span-1 flex min-w-0 flex-col justify-start gap-1 sm:min-w-full">
-        <h2 className="order-1 font-semibold leading-none sm:order-2">
+        <h2 className="text-lg order-1 font-semibold leading-none sm:order-2 text-accent-foreground">
           {name}
         </h2>
         {start && (
@@ -43,7 +43,7 @@ export default function TimelineItem({ experience }: Props) {
           </time>
         )}
         {title && (
-          <p className="order-3 text-sm text-muted-foreground sm:order-3">
+          <p className="order-3 text-sm text-secondary-foreground sm:order-3">
             {title}
           </p>
         )}
