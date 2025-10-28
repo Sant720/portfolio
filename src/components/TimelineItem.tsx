@@ -13,11 +13,11 @@ export default function TimelineItem({ experience }: Props) {
     experience;
 
   return (
-    <li className="relative ml-10 py-4">
+    <li className="relative flex items-start gap-4 py-4 sm:ml-10 sm:block">
       <Link
         href={href}
         target="_blank"
-        className="absolute -left-16 top-4 flex items-center justify-center rounded-full bg-white"
+        className="static flex flex-shrink-0 items-center justify-center rounded-full bg-white sm:absolute sm:-left-16 sm:top-4"
       >
         <Avatar className="size-12 border">
           <AvatarImage
