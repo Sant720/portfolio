@@ -32,13 +32,13 @@ export default async function Home() {
             Hi I&apos;m Santiago 👋
           </h1>
 
-          <p className="mt-2 whitespace-nowrap text-base font-medium sm:text-base">
+          <p className="mt-2 text-base font-medium">
             {/* {new Date().getFullYear() - SANTIAGO_BIRTH_YEAR} */}
-            Senior Technical Writer from Lima, Peru 🇵🇪
+            Senior Technical Writer & Product Owner from Lima, Peru 🇵🇪
           </p>
 
           <ul className="mt-4 max-w-sm text-sm sm:text-sm list-disc pl-3 space-y-1">
-            <li><strong>Currently working at Uber</strong> managing large-scale documentation ecosystems for GenAI and SaaS tools.</li>
+            <li><strong>Currently at Uber</strong> managing large-scale documentation ecosystems for GenAI and SaaS tools.</li>
             <li>4+ years of experience working with <strong>U.S.-based engineering teams</strong>.</li>
             <li>Native-level English and exceptional collaboration skills.</li>
           </ul>
