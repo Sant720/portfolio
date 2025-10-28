@@ -51,7 +51,7 @@ export default function TimelineItem({ experience }: Props) {
 
       {/* Career item description */}
       {description && (
-        <ul className="col-span-2 ml-4 list-outside list-disc">
+        <ul className="col-span-2 ml-4 list-outside list-disc mt-0 sm:mt-2">
           {description.map((desc, i) => (
             <li key={i} className="prose pr-4 text-sm dark:prose-invert mb-2">
               {desc}
