@@ -9,9 +9,10 @@
     "end": "Present",
     "description": [
       "Lead day-to-day operations of the IT Knowledge Management team. We oversee 400+ knowledge resources for AI, SaaS, Cloud, and Enterprise applications in partnership with engineering teams—maintaining an average article rating of 4.72/5.",
-      "Launch Uber’s internal GenAI Knowledge Hub in ServiceNow and Confluence, educating 10,000+ employees in AI tools (e.g. ChatGPT, Gemini, Glean, etc.) and driving 120K+ new page visits across Uber’s internal platforms.",
+      "Launch Uber’s internal GenAI Knowledge Hub in ServiceNow and Confluence, educating 10,000+ employees in AI tools (e.g. ChatGPT, Gemini, Glean, etc) and driving 120K+ new page visits across Uber’s internal platforms.",
       "Create API documentation and user-facing resources for Uber's GenAI Gateway, a unified platform for all internal LLM use cases, improving the onboarding process for new GenAI tools and pilots.",
-      "Design, structure, and build 12+ internal documentation microsites in support of business-critical workflows from separate departments (Contract Management, Payments, Global Security, Legal), ensuring alignment with Uber's documentation guidelines, enterprise data security, and compliance policies.",
+      "Troubleshoot and resolve Tier 1/Tier 2 issues across Enterprise Apps (SaaS, AI, Cloud), identifying root causes, logging defects, and closing knowledge gaps in SOPs to improve self-service success rates and reduce ticket volume.",
+      "Review knowledge escalations for L1/L2 support teams, ensuring SOPs reflected real-world scenarios, enabling agents to resolve tickets confidently, and driving a self-service-first culture across the organization.",
       "Architect the content hierarchy and taxonomy tree of Uber's new central wiki by reviewing, retiring and migrating 800+ IT Knowledge resources from dispersed legacy repositories."
     ]
   },
