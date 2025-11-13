@@ -1,33 +1,33 @@
 {
   "career": [
     {
-      "name": "Uber",
-      "href": "https://www.uber.com/",
-      "title": "Senior Technical Writer",
-      "logo": "/uber-logo-square.jpg",
-      "start": "May 2021",
-      "end": "Present",
-      "description": [
-        "Lead day-to-day operations of the IT Knowledge Management team, overseeing 400+ knowledge resources for AI, SaaS, Cloud, and Enterprise applications in partnership with Engineers, App Owners, and Program Managers—maintaining an average article rating of 4.72/5 by prioritizing documentation accuracy, relevance, and governance.",
-        "Launch Uber’s internal GenAI Knowledge Hub in ServiceNow and Confluence, creating 80+ documentation resources for tools like ChatGPT, Gemini, Glean, and Zoom AI, and driving 120K+ new page visits across Uber’s internal platforms.",
-        "Design, structure, and build 12+ internal documentation microsites in support of business-critical workflows from separate departments (Contract Management, Payments, Global Security, Legal), ensuring alignment with Uber's documentation guidelines, enterprise data security, and compliance policies.",
-        "Develop and pilot an agentic workflow that analyzed and scored 70+ knowledge articles for AI-readiness, improving user satisfaction with internal AI assistants by 30%; this initiative is now being adopted by other knowledge teams at Uber.",
-        "Architect the content hierarchy and taxonomy tree of Uber's new central wiki by reviewing, retiring and migrating 800+ resources from dispersed legacy repositories."
-      ]
-    },
-    {
-      "name": "BairesDev",
-      "href": "https://www.bairesdev.com/",
-      "title": "Content Strategist",
-      "logo": "/bairesdev-logo.svg",
-      "start": "May 2019",
-      "end": "May 2021",
-      "description": [
-        "Lead SEO optimization for 50+ services landing pages, achieving ~80% first-page Google rankings through improved metadata and structure, keyword optimization, and refining copy to match user intent—rather than marketing buzzwords.",
-        "Scale blog content production by 4× (from 8 to 32 articles per month) by designing and executing a content strategy centered on SEO growth of service landing pages, managing external writers, and reviewing strategic alignment of all deliverables.",
-        "Ghostwrite and edit thought leadership content for C-level executives across Forbes Tech Council, LinkedIn, and the company blog, elevating brand voice and increasing follower engagement in their personal profiles by 2.5× on average."
-      ]
-    },
+    "name": "Uber",
+    "href": "https://www.uber.com/",
+    "title": "Senior Technical Writer | BizTech Enterprise Apps",
+    "logo": "/uber-logo-square.jpg",
+    "start": "May 2021",
+    "end": "Present",
+    "description": [
+      "Lead day-to-day operations of the IT Knowledge Management team. We oversee 400+ knowledge resources for AI, SaaS, Cloud, and Enterprise applications in partnership with engineering teams—maintaining an average article rating of 4.72/5.",
+      "Launch Uber’s internal GenAI Knowledge Hub in ServiceNow and Confluence, educating 10,000+ employees in AI tools (e.g. ChatGPT, Gemini, Glean, etc.) and driving 120K+ new page visits across Uber’s internal platforms.",
+      "Create API documentation and user-facing resources for Uber's GenAI Gateway, a unified platform for all internal LLM use cases, improving the onboarding process for new GenAI tools and pilots.",
+      "Design, structure, and build 12+ internal documentation microsites in support of business-critical workflows from separate departments (Contract Management, Payments, Global Security, Legal), ensuring alignment with Uber's documentation guidelines, enterprise data security, and compliance policies.",
+      "Architect the content hierarchy and taxonomy tree of Uber's new central wiki by reviewing, retiring and migrating 800+ IT Knowledge resources from dispersed legacy repositories."
+    ]
+  },
+  {
+    "name": "BairesDev",
+    "href": "https://www.bairesdev.com/",
+    "title": "Content Strategist (SEO) | Global Marketing",
+    "logo": "/bairesdev-logo.svg",
+    "start": "May 2019",
+    "end": "May 2021",
+    "description": [
+      "Lead SEO optimization for 50+ services landing pages, achieving ~80% first-page Google rankings through improved metadata and structure, keyword optimization, and refining copy to match user intent—rather than marketing buzzwords.",
+      "Scale blog content production by 4× (from 8 to 32 articles per month) by designing and executing a content strategy centered on SEO growth of service landing pages, managing external writers, and reviewing strategic alignment of all deliverables.",
+      "Ghostwrite and edit thought leadership content for C-level executives across Forbes Tech Council, LinkedIn, and the company blog, elevating brand voice and increasing follower engagement in their personal profiles by 2.5× on average."
+    ]
+  },
     {
       "name": "Almerco",
       "href": "https://almerco.pe/",
