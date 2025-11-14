@@ -44,7 +44,7 @@ export default async function Home() {
           </ul>
 
           <section className="mt-6 flex flex-wrap items-center gap-4">
-            <Link href="/Santiago Bolivar - 2026 Resume.pdf" target="_blank">
+            <Link href="/Santiago Bolivar - Resume 2026.pdf" target="_blank">
               <Button variant="outline">
                 <span className="font-semibold">Resume</span>
                 <FileDown className="ml-2 size-5" />
