@@ -20,8 +20,6 @@ A clean, minimal portfolio website built with Next.js, Tailwind CSS, and Shadcn 
 - Tailwind CSS
 - Shadcn UI
 - Vercel (hosting)
-- AstraDB (vector storage)
-- Upstash (caching)
 - Resend (email)
 
 ## Deployment
