@@ -1,6 +1,22 @@
 {
   "projects": [
     {
+      "name": "Build an AI documentation chatbot from scratch",
+      "description": "Designing and building a retrieval-based chatbot that answers documentation questions using only published content, links every source it cites, and refuses what the docs don't cover.",
+      "image": "/chatbot-hero.png",
+      "tags": {
+  "primary": ["WebPros", "In Progress", "RAG"],
+  "secondary": ["Python", "FastAPI", "Supabase", "Hugo", "LLM Evaluation"]
+},
+      "links": [
+        {
+          "name": "Read the blog post",
+          "href": "/blog/documentation-ai-chatbot",
+          "icon": "book-text"
+        }
+      ]
+    },
+    {
       "name": "Optimize knowledge articles for internal AI search engines",
       "description": "Created an agentic workflow to automatically analyze, score, and optimize knowledge content for AI-readiness across Uber’s knowledge systems.",
       "image": "/agentic-flow-hero.png",

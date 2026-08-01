@@ -1,0 +1,103 @@
+---
+title: "Building a documentation chatbot that's fully owned by a content team"
+summary: "An in-progress project at WebPros. A retrieval-based chatbot that answers questions using only our published documentation, integrates with our CI/CD pipeline, and helps us identify knowledge gaps early."
+image: "/chatbot-hero.png"
+publishedAt: "2026-07-31"
+tags: ["WebPros", "RAG", "Documentation", "Python", "FastAPI", "Supabase", "CI/CD", "LLM Evaluation", "In Progress"]
+---
+
+I joined WebPros in January 2026 to lead content initiatives across a suite of hosting and server management products. SolusVM is one of them. Its documentation is thorough, well maintained, public, and most importantly, fairly small.
+
+That makes the perfect test subject to try to do something I've never done before: create a chatbot that's completely owned and maintained by our documentation team.
+
+Fair warning before you keep reading: **this project is still in progress.** I am writing from the middle of it. Some of it works, one part of it failed, and the biggest question is still open.
+
+## The idea, in plain terms
+
+Our documentation lives in Markdown and builds with Hugo. That turned out to be a real advantage, because the source content is already structured by headings.
+
+The pipeline I built does three things.
+
+**Indexing.** A script walks the docs, splits every page at its headings, and converts each section into a numerical representation called an embedding. Those get stored in a Postgres database with a vector extension. About 280 sections so far. Each one holds onto the link to its exact heading on the live site. This step runs from our CI/CD pipeline, so it is triggered by the same event that publishes the docs rather than by me remembering to run it.
+
+**Retrieval.** When a reader asks something, I convert their question the same way and search for the closest sections.
+
+**Generation.** Those sections go to a language model with strict instructions. Answer only from this content. Cite what you used. If the content does not cover the question, say so plainly.
+
+The answer streams back word by word, with links to the sections behind it.
+
+The CI/CD piece is the part I would call the least clever and the most important. When a writer merges a change, the docs rebuild and the index rebuilds behind them, so the chatbot's knowledge and the published site never drift apart. There is no "remember to re-index" step in anyone's checklist, because a step like that gets skipped eventually and then the bot starts confidently quoting a page that no longer exists.
+
+That last instruction matters more to me than anything else in the system. A chatbot that improvises about server configuration is worse than no chatbot at all. I would much rather it say "I could not find this in the documentation" and log the question. A logged refusal is a content gap I can go and fix. A confident wrong answer is a problem nobody notices until it reaches a customer.
+
+That inversion is the part I did not anticipate liking so much. A refusal is not a failure to be tuned away, it is the earliest signal we get that something is missing, and it arrives while a reader is still reading instead of weeks later as a support ticket. The chatbot answers questions, but it also quietly tells us which questions our documentation cannot answer yet.
+
+## I built it to be owned by writers, not engineers
+
+This was a deliberate design constraint, and it shaped a lot of small decisions.
+
+Every meaningful control lives in content or configuration, never buried in code:
+
+- The published docs are the only source of truth. There is no separate knowledge base to keep in sync.
+- Publishing a page is the only action required to teach the chatbot something. The pipeline handles the rest.
+- A page opts out of the chatbot with a single line in its front matter. No code change, no ticket.
+- Because chunks follow headings, every citation deep links to the exact section that answered the question. Fix the page and you fix the answer. Rename a heading and the citation follows.
+- Every question gets logged with its retrieval data, which tells the docs team what readers actually ask and where our content is thin.
+
+I did not want to build something that needed me forever. If a writer cannot change what the chatbot knows by doing their normal job, the whole thing is a liability.
+
+## Then I measured it, and the numbers redirected the project
+
+I could have kept polishing the prototype on vibes. Instead I stopped and built a way to test it.
+
+I created a set of 35 questions covering every category in the docs, from quick start to troubleshooting to billing. Thirty of them have real answers in the documentation. Five are deliberately out of scope, to check that the bot refuses instead of inventing. Then I wrote two test harnesses: one that scores retrieval quality alone, and one that hits the real endpoint end to end and records timing, token counts, sources, and refusals per question.
+
+Retrieval came back strong. The correct section appeared in the top three results 93.3% of the time, against the 80% bar I had set. I switched embedding models partway through and the harness is how I knew the swap was an improvement rather than a hunch.
+
+Then I looked at speed. On a shared internal server, the median response took **47 seconds**. Nobody waits 47 seconds for a documentation answer.
+
+My instinct was to blame retrieval, so I instrumented every stage. Embedding the question took 50 to 150 milliseconds. Searching the database took 50 to 200. Assembling the prompt was too fast to matter. Then the model started writing, and there went 47 seconds.
+
+I also ran the experiment I was certain would help. I gave the model more context to work with, retrieving five sections instead of two. It doubled the response time and made the answers slightly worse. With more material in front of it, the model refused more questions it should have answered.
+
+That result reframed the whole project. I had been tuning the part that was already fast. Without the test harness I would have spent weeks optimizing retrieval and wondering why nothing improved.
+
+## The failure I still think about
+
+I planned a two week internal beta with a small group of testers. It never happened.
+
+To try the chatbot, a tester had to be on the VPN, add an entry to their hosts file, and then click through a browser security warning. Every new browser session meant clicking through it again.
+
+Nobody is going to do that to test a chatbot. I would not have done it.
+
+I had built something that worked and then made it too annoying to try. The engineering was sound and the on-ramp was terrible, and only one of those things determines whether anyone uses your thing. Fixing that friction is now a requirement before I ask anyone to test again. It is not a polish item at the end of the list.
+
+## Where it stands right now
+
+A few threads are open at once.
+
+I am rebuilding the generation step so the underlying model can be swapped with a configuration change instead of a code change. There are two candidates in play, one that runs locally and one that runs as a hosted service. Rather than debate which is better in the abstract, I want to run both against the same 35 questions and let the results talk. Retrieval stays identical on both sides, so any difference in answer quality belongs to the model.
+
+The pilot server is offline while I rebuild it, this time with the setup steps written down properly instead of living in my terminal history.
+
+The largest open question is not technical at all. It is where a locally run model would actually live in production, with real capacity and a real price. I do not have that answer, and I have stopped trying to estimate my way around it. Tracking down the right person to ask is my top priority this month.
+
+There is also review work ahead of anything customer facing. I have been mapping those requirements as I build rather than discovering them at the end, which is a habit I picked up the hard way on earlier projects.
+
+One more thread I enjoyed, and it turned out to be the gap detection idea running one level up. To check whether my 35 test questions resembled anything real, I wrote a scraper and pulled 414 published articles from the public support site. Two thirds of my questions matched patterns people genuinely bring to support, which was reassuring. It also showed me that the questions readers ask are shaped quite differently from the material the docs currently cover. That comparison turned into a clear plan for what to expand next, before a single tester had typed a question into the thing.
+
+## What this project has taught me so far
+
+**Measure before you optimize.** Every strong decision in this project came from a number, and two of those numbers contradicted what I expected. The eval harness took a couple of days to write and has saved me weeks.
+
+**Write down what you do not know.** I keep a briefing document for this project with the guesses still marked as guesses and the unverified numbers labeled unverified. It is genuinely uncomfortable to maintain. It also means I have never accidentally presented a placeholder as a fact.
+
+**Being willing to reopen your own conclusions.** I wrote a report recommending one direction. Later I realized the evidence behind it was thinner than the confidence I had written it with, because I had tested a small model on unsuitable hardware and drawn a conclusion about a whole category. Saying so out loud was better than defending it.
+
+**Learning in public is the fast way.** I am a technical writer, not an ML engineer. When I started I could not have explained what an embedding was. I learned this by building it badly, measuring it, and fixing it, and I am still learning parts of it right now.
+
+The chatbot is not finished. I think the interesting part is that it exists at all, because nobody handed me a spec for it. I noticed a problem in a place I care about, taught myself enough to try, and kept the receipts as I went.
+
+If you made it this far, thank you for reading. I would genuinely love to talk about it.
+
+Santiago
