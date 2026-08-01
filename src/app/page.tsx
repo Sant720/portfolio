@@ -38,13 +38,14 @@ export default async function Home() {
           </p>
 
           <ul className="mt-4 max-w-sm text-sm sm:text-sm list-disc pl-3 space-y-1">
-            <li><strong>Currently at Uber</strong> managing large-scale documentation ecosystems for GenAI and SaaS tools.</li>
-            <li>4+ years of experience working with <strong>U.S.-based engineering teams</strong>.</li>
+            <li><strong>Currently at WebPros</strong>, leading content initiatives for 10+ enterprise suite products.</li>
+            <li><strong>Previously at Uber</strong>, where I managed large-scale documentation ecosystems for GenAI and SaaS tools.</li>
+            <li>5+ years of experience working with <strong>U.S.-based engineering teams</strong>.</li>
             <li>Native-level English and exceptional collaboration skills.</li>
           </ul>
 
           <section className="mt-6 flex flex-wrap items-center gap-4">
-            <Link href="/Santiago Bolivar Technical Support Engineer Resume.pdf" target="_blank">
+            <Link href="/Santiago Bolivar Resume 2026.docx.pdf" target="_blank">
               <Button variant="outline">
                 <span className="font-semibold">Resume</span>
                 <FileDown className="ml-2 size-5" />
