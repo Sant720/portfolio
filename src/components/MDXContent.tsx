@@ -21,6 +21,7 @@ export default function MDXContent(
   return (
     <MDXRemote
       {...props}
+      options={{ blockJS: false, ...props.options }}
       components={{ ...components, ...(props.components || {}) }}
     />
   );
