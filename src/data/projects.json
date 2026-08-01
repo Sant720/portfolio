@@ -18,7 +18,7 @@
     },
     {
       "name": "Optimize knowledge articles for internal AI search engines",
-      "description": "Created an agentic workflow to automatically analyze, score, and optimize knowledge content for AI-readiness across Uber’s knowledge systems.",
+      "description": "Created an agentic workflow to automatically analyze, score, and flag what to fix in knowledge content for AI-readiness across Uber’s knowledge systems.",
       "image": "/agentic-flow-hero.png",
       "tags": {
   "primary": ["Uber", "Agentic Workflow"],

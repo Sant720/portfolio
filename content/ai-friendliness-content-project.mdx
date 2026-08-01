@@ -1,6 +1,6 @@
 ---
 title: "Optimize knowledge articles for internal AI search engines"
-summary: "Developed and piloted an agentic workflow that automatically analyzes, scores, and optimizes internal knowledge content for AI-readiness across Uber’s enterprise knowledge systems."
+summary: "Developed and piloted an agentic workflow that automatically analyzes, scores, and flags what to fix in internal knowledge content for AI-readiness across Uber’s enterprise knowledge systems."
 image: "/agentic-flow-hero-big.png"
 publishedAt: "2025-10-05"
 tags: ["Uber", "Agentic Workflow", "AI", "SEO", "ServiceNow", "ChatGPT", "HTML"]
@@ -20,7 +20,7 @@ The project aimed to **make enterprise knowledge more accessible and actionable 
 
 Throughout 2025, Uber piloted several **AI Assistants** that helped employees **find information across internal systems** like UberHub, Google Drive, Confluence, and ServiceNow.  
 
-Our team observed that these AI Assistants often **returned incomplete, innaccurate, or irrelevant results**, causing user confusion. 
+Our team observed that these AI Assistants often **returned incomplete, inaccurate, or irrelevant results**, causing user confusion. 
 
 One of the identified causes stemmed from content issues: due to variance across internal platforms, many knowledge resources had **inconsistent structure, unclear metadata, information chunking**, and other defects that made it difficult for LLM-based tools to extract context appropriately and generate accurate responses.  
 
@@ -33,9 +33,9 @@ Our challenge was to **quantify AI SEO friendliness** and then create a way to *
 Create a **scalable, repeatable workflow** that could:
 
 1. **Analyze** internal content against a formalized set of *AI SEO parameters* — structure, metadata, chunking, promptability, semantic density, etc.  
-2. **Score** content based on weighted metrics defined in a new **AI SEO Guidelines**.  
+2. **Score** content based on weighted metrics defined in a new set of **AI SEO Guidelines**.  
 3. **Provide recommendations** for improvement and help content owners revise their pages.  
-4. **Ensure repeatability** so that re-running the same content should always yield the same score.
+4. **Keep scores stable enough to trust**, so that a change in score reflects a real change in the content rather than variation between runs.
 
 ---
 
@@ -45,11 +45,27 @@ I proposed and developed an **agentic workflow** utilizing **Uber's internal AI 
 
 - **Extract** content and metadata from various internal knowledge repositories.  
 - **Evaluate** each article against weighted guideline parameters.  
-- **Generate deterministic scores** and qualitative feedback.**  
+- **Score** each parameter and pair every number with the qualitative feedback that explains it.  
 - **Output improvement recommendations**, such as restructuring sections, clarifying metadata, and improving headings or summaries.
 
 > ### **Key differentiator**  
-> The workflow produces **repeatable, deterministic scores**, ensuring consistency and traceability across content updates.
+> Most of the score comes from checks that run in code. The model is only asked to judge what genuinely needs language understanding, and it judges one criterion at a time against a written rubric.
+
+### Making the scores trustworthy
+
+Early on I wanted the scores to be deterministic. That is not something a language model can offer.
+
+A model samples from a probability distribution, so the same article can come back with a different number on a different run. Pinning the temperature to its floor narrows that spread but never removes it, and nothing about a hosted model guarantees identical output across versions or infrastructure changes. Our first passes showed exactly that. A score that moves on its own is a score no content owner will accept, and rightly so.
+
+So I stopped trying to make the model repeat itself and made the **scoring** dependable instead.
+
+- **Anything countable is counted in code.** Heading depth and order, metadata completeness, section length, alt text, and link quality are measured programmatically. Those checks return the same result every time, and they carry most of the weight in the final score.
+- **The model only handles judgment calls.** Rather than asking it to rate a whole article, each agent answers one narrow question against a written definition from the guidelines. Narrow questions produce far steadier answers than broad ones.
+- **Defined bands instead of free-floating numbers.** Each criterion resolves to a named level with the evidence for that level attached. Asking for a level removes most of the drift that asking for a score out of 100 invites.
+- **Fixed output schema and the lowest practical temperature.** Every agent returns the same structure, so results are comparable and machine-readable instead of prose someone has to interpret.
+- **Variance became a metric of its own.** Re-running the same articles and tracking how far the score moved is what tells you whether a difference between two revisions is real or just noise.
+
+The accurate claim is that scores are **reproducible within a narrow, measured range**, not identical. That range is enough for the job, because the workflow compares a page against its own earlier version and against the guidelines. Both of those comparisons survive a little movement. Neither survives a number that changes on its own.
 
 ---
 
@@ -57,8 +73,8 @@ I proposed and developed an **agentic workflow** utilizing **Uber's internal AI 
 
 - **Impact:** 70+ knowledge articles impacted in pilot phase.  
 - **Guideline creation:** Contributed to the authoring of Uber’s first **AI SEO Guidelines Document**, defining measurable standards and weights.  
-- **Agentic workflow:**: Designed a multi-agent pipeline for content ingestion, analysis, and consistent scoring.  
-- **Improved user satisfaction**: Directly improved the performance of internal AI assistants, increasing both precision and user confidence in AI-generated responses.
+- **Agentic workflow:** Designed a multi-agent pipeline for content ingestion, analysis, and scoring, with the objective checks handled in code rather than by a model.  
+- **Better assistant answers on reviewed content**: Articles that went through the workflow were easier for the assistants to retrieve from and quote correctly. The pilot was deliberately small, so I read this as a directional result rather than a measured company-wide gain.
 
 ---
 
@@ -68,7 +84,7 @@ We are currently expanding the scope of the project to achieve the following:
 
 - Automate ingestion of updated articles.  
 - Extend scoring functionality to more knowledge repositories.  
-- Embedd real-time AI-friendliness feedback within authoring tools.  
+- Embed real-time AI-friendliness feedback within authoring tools.  
 - Partner with other knowledge management teams to help them adopt the workflow in their documentation lifecycle.
 - Build internal dashboards to visualize content improvements over time.
 
@@ -78,7 +94,9 @@ We are currently expanding the scope of the project to achieve the following:
 
 This project demonstrated how **technical writing, AI literacy, and workflow automation** converge to improve enterprise knowledge quality.  
 
-By treating documentation as a **data product**, we enabled scalable, measurable, and repeatable improvement — setting a foundation for AI-driven documentation quality frameworks across Uber.
+The most useful lesson was about where to put the AI. A language model is very good at judging whether a summary is clear, and very bad at being a ruler. Once I moved every measurable check into code and left the model only the questions that genuinely need reading comprehension, the workflow became something content owners were willing to be scored by.
+
+By treating documentation as a **data product**, we enabled scalable and measurable improvement, setting a foundation for AI-driven documentation quality frameworks across Uber.
 
 ---
 
